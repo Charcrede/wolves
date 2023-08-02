@@ -6,30 +6,44 @@ import { Categorie } from "./categorie"; // inportation de la class catégorie
 export const CATEGORIES : Categorie[] =[
     {
         "id": "1",
-        "name": "Automobile"
+        "name": "Automobile",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "2",
-        "name": "Restauration"
+        "name": "Restauration",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "3",
-        "name": "Finance"
+        "name": "Finance",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "4",
-        "name": "Sport"
+        "name": "Sport",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "5",
-        "name": "Design"
+        "name": "Design",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "6",
-        "name": "Technologie"
+        "name": "Technologie",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "7",
-        "name": "marseille"
+        "name": "marseille",
+        "seen": false,
+        "choose": false
     }
 ]
