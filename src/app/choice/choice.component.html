@@ -2,6 +2,6 @@
     <p>Bonjour et bienvenue, sur notre site</p>
     <p>Pour commencer la création de votre site vitrine, veuillez nous dire de quel type de site avez vous besoin</p>
     <ul>
-        <li >{{categorie}}</li>
+        <li *ngFor="let cat of categories"><a *ngIf="cat.seen">{{cat.name}}</a></li>
     </ul>
 </div>

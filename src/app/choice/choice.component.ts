@@ -14,5 +14,11 @@ export class ChoiceComponent implements OnInit {
   categories: Categorie[] = CATEGORIES
   categorie: Array<Categorie> = [];
   ngOnInit(): void {
+    setInterval(()=>{
+      if (this.index < this.categories.length) {
+        this.categories[this.index].seen = true;
+        this.index++
+      }
+    }, 1000)
   }
 }
