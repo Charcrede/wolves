@@ -1,35 +1,58 @@
+<<<<<<< HEAD
 import { Categorie } from "./categorie";
 import { Slide } from "./categorie";
 
 
 export const CATEGORIES: Categorie[] = [
+=======
+import { Categorie } from "./categorie"; // inportation de la class catégorie
+
+/**
+ * @CATEGORIES Le grand tableau qui contient les différents catégorie instancier a partir de la class categorie
+ */
+export const CATEGORIES : Categorie[] =[
+>>>>>>> 779a9a2a0c01a3ff98bbe048a7454653ffdda0c6
     {
         "id": "1",
-        "name": "Lorem"
+        "name": "Automobile",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "2",
-        "name": "Ipsum"
+        "name": "Restauration",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "3",
-        "name": "dolor"
+        "name": "Finance",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "4",
-        "name": "sit"
+        "name": "Sport",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "5",
-        "name": "amet"
+        "name": "Design",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "6",
-        "name": "nolar"
+        "name": "Technologie",
+        "seen": false,
+        "choose": false
     },
     {
         "id": "7",
-        "name": "marseille"
+        "name": "marseille",
+        "seen": false,
+        "choose": false
     }
 ];
 
