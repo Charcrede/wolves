@@ -1,30 +1,32 @@
-import { Categorie } from "./categorie";
+import { Categorie } from "./categorie"; // inportation de la class catégorie
 
-
+/**
+ * @CATEGORIES Le grand tableau qui contient les différents catégorie instancier a partir de la class categorie
+ */
 export const CATEGORIES : Categorie[] =[
     {
         "id": "1",
-        "name": "Lorem"
+        "name": "Automobile"
     },
     {
         "id": "2",
-        "name": "Ipsum"
+        "name": "Restauration"
     },
     {
         "id": "3",
-        "name": "dolor"
+        "name": "Finance"
     },
     {
         "id": "4",
-        "name": "sit"
+        "name": "Sport"
     },
     {
         "id": "5",
-        "name": "amet"
+        "name": "Design"
     },
     {
         "id": "6",
-        "name": "nolar"
+        "name": "Technologie"
     },
     {
         "id": "7",

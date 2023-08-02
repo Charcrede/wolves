@@ -6,4 +6,12 @@ import { Injectable } from '@angular/core';
 export class ServiceService {
 
   constructor() { }
+
+  tempTab: string[] = []
+
+  showSlow(text: string): string{
+    text.split("")
+    return text
+  }
+
 }
