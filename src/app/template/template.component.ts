@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-template',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./template.component.css']
 })
 export class TemplateComponent {
-
+  constructor(private service : ServiceService){}
 }

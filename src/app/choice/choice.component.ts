@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-choice',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./choice.component.css']
 })
 export class ChoiceComponent {
-
+  constructor(private service : ServiceService){}
 }

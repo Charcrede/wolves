@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-formulaire',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent {
-
+  constructor(private service : ServiceService){}
 }
