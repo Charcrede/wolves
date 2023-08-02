@@ -4,3 +4,10 @@ export class Categorie{
         public name: string
     ){ }
 }
+
+export class Slide {
+    constructor (
+        public headline: string,
+        public src: string
+    ) {}
+}
