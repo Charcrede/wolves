@@ -1,0 +1,81 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* body {
+    background: linear-gradient(120deg, #17bebb, #f0a6ca);
+    overflow: hidden;
+    
+  } */
+
+ 
+fieldset{
+    background: linear-gradient(120deg, #17bebb, #f0a6ca);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 0.5em;
+    margin-block: 2em;
+    font-size: 1.6rem;
+    
+}
+
+
+input{
+    padding: 1em;
+    border:1px solid rgba(0,0,0,0.2);
+}
+
+label{
+    width: 30%;
+    padding: 0.5em;
+}
+
+input{
+    padding-block: 0.5em;
+    padding-inline: 1em;
+    font-size: 1.6rem;
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 0.5em;
+}
+
+button{
+    padding-block: 1em;
+    padding-inline: 2em;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color:#DD5735;
+    border-color:#e6c9c2;
+    border-radius: 0.5em;
+    cursor: pointer;
+      background: linear-gradient(120deg, #17bebb, #f0a6ca);
+     
+}
+
+button:hover{
+    text-decoration: none;
+    color: #DD5735;
+    background-color: #fff;
+}
+
+input[type=text],
+input[type=email] {
+    display: inline-block;
+    width: 70%;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+}
+
+
+.btn{
+    text-align: center;
+}
+
+
+
