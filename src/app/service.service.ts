@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Categorie } from './categorie';
+import { Carousel} from './models';
+
 
 @Injectable({
-      providedIn: 'root'
+  providedIn: 'root'
 })
 export class ServiceService {
 
   constructor() { }
+
+
 }
 
