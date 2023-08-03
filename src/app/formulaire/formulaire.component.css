@@ -1,14 +1,12 @@
-*,
+/* *,
 *::before,
 *::after{
     box-sizing: border-box;
 }
-
-/* body {
-    background: linear-gradient(120deg, #17bebb, #f0a6ca);
-    overflow: hidden;
-    
-  } */
+.forb{
+    width: 1500px;
+    margin:0 auto
+}
 
  
 fieldset{
@@ -18,7 +16,7 @@ fieldset{
     border-radius: 0.5em;
     margin-block: 2em;
     font-size: 1.6rem;
-    
+    padding: 1.5rem;
 }
 
 
@@ -74,8 +72,11 @@ input[type=email] {
 
 
 .btn{
+    display: flex;
+    justify-content: center;
     text-align: center;
-}
+} */
 
 
 
+ 

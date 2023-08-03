@@ -1,7 +1,7 @@
 <div>
     <!-- <div class="globe"><img src="../../assets/globe.webp" alt=""></div> -->
-    <p>Bonjour et bienvenue, sur notre site</p>
-    <p>Pour commencer la création de votre site vitrine, veuillez nous dire de quel type de site avez vous besoin</p>
+    <p class="build">Bonjour et bienvenue, sur notre site</p>
+    <p class="build">Pour commencer la création de votre site web, veuillez nous dire de quel type de site avez vous besoin</p>
     <ul >
         <li role="button" *ngFor="let cat of categorie"><a  *ngIf="cat.state" (click)="onSelect(cat)">{{cat.name}}</a></li>
     </ul>
