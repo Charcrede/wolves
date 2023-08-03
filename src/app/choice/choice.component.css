@@ -183,3 +183,12 @@ to{
   background-color: rgba(0, 0, 0,0.5);
 }
 }
+.wraper{
+  height: 90vh;
+  overflow-y: scroll;
+  position: relative;
+}
+/* #input{
+  position: fixed;
+  bottom: 10%;
+} */

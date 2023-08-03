@@ -1,9 +1,14 @@
 <!-- carousel.component.html -->
-<div class="row mt-3 mb-3 px-2">
-
+<h2>choix du template</h2>
+<div class="parent" *ngIf="!patTemp"> <!-- div utiliser pour faire le loading -->
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+<div class="row mt-3 mb-3 px-2" *ngIf="patTemp" >
       <!-- Carousel -->
       <div class="carousel-button col-sm-4">
-            <button class="templateInput" [ngClass]="{'fa fa-check': checked1}" (click)="select1()"></button>
+            <!-- <button class="templateInput" [ngClass]="{'fa fa-check': checked1}" (click)="select1()"></button> -->
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
                   <!-- Indicators/dots -->
                   <div class="carousel-indicators">
@@ -28,7 +33,7 @@
             </div>
       </div>
       <div class="carousel-button col-sm-4">
-            <button class="templateInput" [ngClass]="{'fa fa-check': checked2}" (click)="select2()"></button>
+            <!-- <button class="templateInput" [ngClass]="{'fa fa-check': checked2}" (click)="select2()"></button> -->
             <div id="demos" class="carousel slide" data-bs-ride="carousel">
                   <!-- Indicators/dots -->
                   <div class="carousel-indicators">
@@ -53,7 +58,7 @@
             </div>
       </div>
       <div class="carousel-button col-sm-4">
-            <button class="templateInput" [ngClass]="{'fa fa-check': checked3}" (click)="select3()"></button>
+            <!-- <button class="templateInput" [ngClass]="{'fa fa-check': checked3}" (click)="select3()"></button> -->
             <div id="dem" class="carousel slide" data-bs-ride="carousel">
                   <!-- Indicators/dots -->
                   <div class="carousel-indicators">

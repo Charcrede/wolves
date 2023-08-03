@@ -45,7 +45,7 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="seeTheme">veuillez entrer le theme de votre site web</p>
+        <p *ngIf="seeTheme">veuillez entrer le theme de votre site web (entrez uniquement le theme)</p>
         <span class="time-right">11:00</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="seeTheme">
@@ -70,7 +70,7 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="seeTitle">Entrez le nom de votre site :</p>
+        <p *ngIf="seeTitle">Entrez le nom de votre site : (entrez uniquement le titre du site s'il vous plait)</p>
         <!-- <div class="theme">
                 <ul class="">
                     <li class="bd-round b-shadow" role="button" *ngFor="let them of categorieThemes.themes"><a
@@ -78,10 +78,34 @@
                     </ul>
                 </div> -->
     </div>
-    <form (ngSumit)="themer()">
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0]">
+        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <div class="parent" *ngIf="seeTitle && !selectedTheme[1]">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p class="mb-0" *ngIf="selectedTheme[1]">{{selectedTheme[1]}}</p>
+        <button class="btn btn-outline-light float-end">modifiez</button>
+        <span class="time-right">11:00</span>
+    </div>
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedTheme[1]">
+        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <div class="parent" *ngIf="!fiText"> <!-- div utiliser pour faire le loading -->
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
+        <span class="time-right">11:00</span>
+    </div>
+    <div *ngIf="template">
+        <app-template *ngFor="let carousel of carousels" [carousel]="carousel"></app-template>
+    </div>
+    <form (ngSumit)="themer()" id="input">
         <div class="position-relative"><input type="text" placeholder="Entrer votre texte "
                 class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
                 class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
-        {{inputValue}}
-    </form>
+                {{inputValue}}
+            </form>
 </div>

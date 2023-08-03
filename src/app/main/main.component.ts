@@ -15,15 +15,9 @@ export class MainComponent {
   @Input() getStarted!: boolean;
   template: boolean = false;
   formulaire: boolean = false;
-  botText: string = "Bonjour chers clients"
-  carousels: Carousel[] = CAROUSELS;
   constructor(private service : ServiceService){}
-
-  getCarousels(): Carousel[] {
-    return CAROUSELS;
-  }
+ 
   showTemp($event: any){
     this.template = $event;
   }
-
 }

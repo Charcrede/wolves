@@ -4,6 +4,15 @@ import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
 import { ServiceService } from '../service.service';
 import { FormsModule } from '@angular/forms';
+import { CAROUSELS } from '../mock';
+import { Carousel } from '../models';
+import { count } from 'rxjs';
+let input = document.getElementById('input')
+if (input) {
+      // input.scrollt = input.scrollHeight - input.clientHeight
+      // input.scrollBy({top: 10000000})
+      input.scrollIntoView();
+}
 
 @Component({
       selector: 'app-choice',
@@ -21,6 +30,9 @@ export class ChoiceComponent implements OnInit {
       cate: boolean = false;
       seeTheme : boolean = false;
       seeTitle : boolean = false;
+      template : boolean = false;
+      fiText : boolean = false;
+      confirm: number = 0;
       selectedCategorie!: Categorie;
       categorieThemes!: Themes;
       categories: Categorie[] = CATEGORIES
@@ -30,9 +42,9 @@ export class ChoiceComponent implements OnInit {
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
             // this.categories.forEach(el => {
-            //       el.state = false;
-            // })
-            this.selectedCategorie.state = true;
+                  //       el.state = false;
+                  // })
+                  this.selectedCategorie.state = true;
             this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
@@ -65,13 +77,29 @@ export class ChoiceComponent implements OnInit {
       }
       themer(){
             this.selectedTheme.push(this.inputValue);
+            this.confirm++;
+            console.log(this.confirm);
             
+            if (this.confirm === 3 && this.fiText) {
+                  this.template = true;
+            }
+            if (this.confirm === 2) {
+                  setTimeout(() => {
+                        this.fiText = true;
+                  }, 1000);
+            }
             this.inputValue = "";
             setTimeout(() => {
                   this.seeTitle = true;
             }, 1000);
             
       }
+      botText: string = "Bonjour chers clients"
+      carousels: Carousel[] = CAROUSELS;
+      getCarousels(): Carousel[] {
+            return CAROUSELS;
+      }
+      
       ngOnChanges() {
             if (this.selectedCategorie) {
                   
