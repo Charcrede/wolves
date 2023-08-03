@@ -7,9 +7,3 @@ export class Categorie{
     ){ }
 }
 
-export class Slide {
-    constructor (
-        public headline: string,
-        public src: string
-    ) {}
-}

@@ -14,24 +14,15 @@ export const themes: Theme[] = [
       // Ajoutez les autres thèmes ici
 ];
 
-export const carousels: Carousel[] = [
+export const CAROUSELS: Carousel[] = [
       {
             id: 1,
             name: 'Carousel 1',
             images: [
-                  { id: 1, imageUrl: '../assets/img-carousel/mountains.jpg' },
-                  { id: 2, imageUrl: '../assets/img-carousel/nature.jpg' },
-                  { id: 3, imageUrl: '../assets/img-carousel/snow.jpg' },
+                  { id: 1, imageUrl: '../assets/img-carousel/carousel1.jpg' },
+                  { id: 2, imageUrl: '../assets/img-carousel/carousel2.jpg' },
+                  { id: 3, imageUrl: '../assets/img-carousel/carousel3.jpg' },
             ],
       },
-      {
-            id: 2,
-            name: 'Carousel 2',
-            images: [
-                  { id: 4, imageUrl: '../assets/img-carousel/snow.jpg' },
-                  { id: 5, imageUrl: '../assets/img-carousel/nature.jpg' },
-                  { id: 6, imageUrl: '../assets/img-carousel/mountains.jpg' },
-            ],
-      },
-      // Ajoutez les autres carousels ici
+     
 ];
