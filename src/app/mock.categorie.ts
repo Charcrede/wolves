@@ -48,19 +48,4 @@ export const CATEGORIES : Categorie[] =[
     }
 ];
 
-export const slides: Slide[] = [
 
-    {
-        headline: "For Your Current Mood",
-        src: "../assets/img-carou/mountains.jpg"
-    },
-    {
-        headline: "Miouw",
-        src: "../assets/img-carousel/nature.jpg"
-    },
-    {
-        headline: "In The Wilderness",
-        src: "../assets/img-carousel/nature.jpg"
-    },
-
-];
