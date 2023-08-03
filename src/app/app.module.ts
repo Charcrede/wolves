@@ -10,6 +10,7 @@ import { TemplateComponent } from './template/template.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { MainComponent } from './main/main.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
       declarations: [
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
             BrowserModule,
             AppRoutingModule,
             BrowserAnimationsModule,
-            ReactiveFormsModule
+            ReactiveFormsModule,
+            FormsModule
       ],
       providers: [],
       bootstrap: [AppComponent]

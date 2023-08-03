@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
 import { ServiceService } from '../service.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
       selector: 'app-choice',
@@ -16,10 +17,16 @@ export class ChoiceComponent implements OnInit {
   @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
       temp: boolean = true;
+      bonj: boolean = false;
+      cate: boolean = false;
+      seeTheme : boolean = false;
+      seeTitle : boolean = false;
       selectedCategorie!: Categorie;
       categorieThemes!: Themes;
       categories: Categorie[] = CATEGORIES
       themes: Themes[] = THEMES;
+      selectedTheme: string[] = [];
+      inputValue: string = "";
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
             // this.categories.forEach(el => {
@@ -29,6 +36,10 @@ export class ChoiceComponent implements OnInit {
             this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
+            setTimeout(() => {
+                  this.seeTheme = true;
+                  // this.retard(this.categories)
+            }, 1000);
       }
       retard(array: SousThemes[] | Categorie[]) {
             let i = 0
@@ -38,14 +49,32 @@ export class ChoiceComponent implements OnInit {
                         console.log(array[i]);
                         i++
                   }
-            }, 500);
+            }, 100);
       }
       ngOnInit(): void {
-            this.retard(this.categories)
+            setTimeout(() => {
+                  this.bonj = true;
+            }, 1000);
+            setTimeout(() => {
+                  this.cate = true;
+                  this.retard(this.categories)
+            }, 2000);
       }
       startForm(bool : boolean){
-        this.templ.emit(bool);
+            this.templ.emit(bool);
+      }
+      themer(){
+            this.selectedTheme.push(this.inputValue);
+            
+            this.inputValue = "";
+            setTimeout(() => {
+                  this.seeTitle = true;
+            }, 1000);
+            
       }
       ngOnChanges() {
+            if (this.selectedCategorie) {
+                  
+            }
       }
 }

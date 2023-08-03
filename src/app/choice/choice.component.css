@@ -149,5 +149,37 @@ ul{
   }
   .parent{
     display: flex;
-    gap: 0.5rem;
+    gap: .5rem;
+    align-items: center;
+    margin-top: 1rem;
   }
+  .parent div{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: loader-animation 1.5s infinite;
+}
+.parent div:nth-child(1)
+{
+      animation-delay: 0s;
+}
+.parent div:nth-child(2)
+{
+      animation-delay: 0.2s;
+}
+.parent div:nth-child(3)
+{
+      animation-delay: 0.4s;
+}
+
+@keyframes loader-animation 
+{
+from{
+  transform: scale(1.5);
+  background-color: rgb(0, 0, 0, .7);
+}
+to{
+  transform: scale(1);
+  background-color: rgba(0, 0, 0,0.5);
+}
+}
