@@ -8,10 +8,6 @@ import { ServiceService } from '../service.service';
 })
 export class MainComponent {
 
-  botText: string = "Bonjour chers clients"
-
-  constructor(private service : ServiceService){}
-
   
 
 }
