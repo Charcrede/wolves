@@ -1,7 +1,15 @@
 <div>
+    <!-- <div class="globe"><img src="../../assets/globe.webp" alt=""></div> -->
     <p>Bonjour et bienvenue, sur notre site</p>
     <p>Pour commencer la création de votre site vitrine, veuillez nous dire de quel type de site avez vous besoin</p>
-    <ul>
-        <li *ngFor="let cat of categories"><a *ngIf="cat.seen">{{cat.name}}</a></li>
+    <ul >
+        <li role="button" *ngFor="let cat of categorie"><a  *ngIf="cat.state" (click)="onSelect(cat)">{{cat.name}}</a></li>
     </ul>
+    <p *ngIf="selectedCategorie">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
+    <div *ngIf="categorieThemes">
+        <p>Maintenant que vous avez choisi votre catégorie veuillez choisir le theme que vous voulez :</p>
+        <ul>
+            <li role="button" *ngFor="let them of categorieThemes.themes" ><a *ngIf="them.state">{{them.name}}</a></li>
+        </ul>
+    </div>
 </div>

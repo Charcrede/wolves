@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Carousel} from './models';
-
+import { Categorie, Themes } from './categorie';
+import { THEMES } from './mock.categorie';
 
 @Injectable({
-  providedIn: 'root'
+      providedIn: 'root'
 })
 export class ServiceService {
-
-  constructor() { }  
+ 
+themes: Themes[] = THEMES
+selectedTheme!: Themes;
+  constructor() { }
+  getCatTheme(id: string) {
+    this.selectedTheme = this.themes.filter(el => el.id === id)[0]
+    return this.selectedTheme;
+  }
 
 }
 
