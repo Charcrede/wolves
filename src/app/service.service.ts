@@ -3,10 +3,9 @@ import { Categorie, Themes } from './categorie';
 import { THEMES } from './mock.categorie';
 
 @Injectable({
-      providedIn: 'root'
+    providedIn: 'root'
 })
 export class ServiceService {
- 
 themes: Themes[] = THEMES
 selectedTheme!: Themes;
   constructor() { }

@@ -16,15 +16,19 @@ export class ChoiceComponent implements OnInit {
   constructor(private service: ServiceService) { };
   categorie: Categorie[] = CATEGORIES
   themes: Themes[] = THEMES;
+  pstate: boolean = false;
   onSelect(categorie: Categorie){
     this.selectedCategorie = categorie;
     this.categorie.forEach(el => {
-      el.state = false;
+      el.state = !el.state;
     })
      this.selectedCategorie.state = true;
      this.selectedCategorie.choose = true;
      this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
      this.retard(this.categorieThemes.themes);
+     setTimeout(() => {
+        this.pstate = true
+     }, 1000);
     }
     retard(array: SousThemes[]| Categorie[]){
     let i = 0

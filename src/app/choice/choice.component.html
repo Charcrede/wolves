@@ -5,7 +5,7 @@
     <ul >
         <li role="button" *ngFor="let cat of categorie"><a  *ngIf="cat.state" (click)="onSelect(cat)">{{cat.name}}</a></li>
     </ul>
-    <p *ngIf="selectedCategorie">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
+    <p *ngIf="pstate">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
     <div *ngIf="categorieThemes">
         <p>Maintenant que vous avez choisi votre catégorie veuillez choisir le theme que vous voulez :</p>
         <ul>
