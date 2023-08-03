@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VirtualTimeScheduler } from 'rxjs';
+import { fadeInAnimation } from '../animation.module';
 import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
 import { ServiceService } from '../service.service';
@@ -7,7 +7,8 @@ import { ServiceService } from '../service.service';
 @Component({
       selector: 'app-choice',
       templateUrl: './choice.component.html',
-      styleUrls: ['./choice.component.css']
+      styleUrls: ['./choice.component.css'],
+      animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
       index: number = 0;
