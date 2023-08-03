@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-import { Categorie } from "./categorie";
-import { Slide } from "./categorie";
-
-
-export const CATEGORIES: Categorie[] = [
-=======
 import { Categorie } from "./categorie"; // inportation de la class catégorie
 
 /**
  * @CATEGORIES Le grand tableau qui contient les différents catégorie instancier a partir de la class categorie
  */
 export const CATEGORIES : Categorie[] =[
->>>>>>> 779a9a2a0c01a3ff98bbe048a7454653ffdda0c6
+
     {
         "id": "1",
         "name": "Automobile",
@@ -56,19 +49,4 @@ export const CATEGORIES : Categorie[] =[
     }
 ];
 
-export const slides: Slide[] = [
 
-    {
-        headline: "For Your Current Mood",
-        src: "../assets/img-carou/mountains.jpg"
-    },
-    {
-        headline: "Miouw",
-        src: "../assets/img-carousel/nature.jpg"
-    },
-    {
-        headline: "In The Wilderness",
-        src: "../assets/img-carousel/nature.jpg"
-    },
-
-];
