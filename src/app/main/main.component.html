@@ -1,5 +1,8 @@
 <div>
     <app-choice></app-choice>
-    <app-template></app-template>
+    <app-template *ngFor="let carousel of carousels" [carousel]="carousel"></app-template>
     <app-formulaire></app-formulaire>
+    <div>
+        <p> {{ botText }} </p>
+    </div>
 </div>

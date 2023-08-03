@@ -1,1 +1,11 @@
-<p>template works!</p>
+<!-- carousel.component.html -->
+
+<div class="carousel-container">
+      <div *ngFor="let image of carousel.images" class="carousel-img">
+            <img [src]="image.imageUrl" alt="Image {{ image.id }}" />
+      </div>
+</div>
+
+<!-- Boutons Previous et Next -->
+<button class="carousel-btn previous" (click)="previousSlide">&#8249;</button>
+<button class="carousel-btn next" (click)="nextSlide">&#8250;</button>
