@@ -1,43 +1,24 @@
-<!-- <p>formulaire works!</p> -->
-<!DOCTYPE html>
-<html lang="fr">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-
-    <form action="./formulaire.php" method="post" enctype="multipart/form-data">
-
-        <fieldset >
-
-            
-
-            <div class="flex">
-                <label for="lname">Nom</label><!--
-                --><input id="lname" type="text">
-            </div>
-            
-            <div class="flex"><label for="fname">Prénom</label><!--
-          --><input id="fname" type="text"></div>
-            
-
-            <div class="flex"><label for="email">Email</label><!--
-            --><input id="email" type="text">
-            </div> <br>
- 
-
-            
-            <div class="btn"><button type="submit">Valider et Récuperer</button></div>
-            
-
-        </fieldset>
+<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light bg-gradient">
+    <h2>Finalisez et Recuperez votre site </h2>
+    <p>Votre site n'attend que vous ! </p>
+    <form action="/action_page.php">
+      <div class="form-floating mb-3 mt-3">
+        <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom" name="nom">
+        <label for="nom">Nom</label>
+      </div>
+      <div class="form-floating mt-3 mb-3">
+        <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter le prénom " name="prénom">
+        <label for="prénom">Prénom</label>
+      </div>
+      <div class="form-floating mt-3 mb-3">
+        <input type="text" class="form-control form-control-lg" id="pwd" placeholder="Enter email" name="email">
+        <label for="email">Email</label>
+      </div>
+       
+      <button type="submit" class="btn btn-primary w-100 fw-bold py-3 ">Submit</button>
     </form>
-
-</body>
-
-</html>
+  </div>
+  
+   

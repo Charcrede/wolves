@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ServiceService } from '../service.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   newSentences: string = "";
   constructor(private service : ServiceService){}
   writter(sentences: string){
@@ -19,6 +19,9 @@ export class HeaderComponent {
         this.newSentences = newTab.join("")
         i++;
       }
-    }, 500);
+    }, 70);
+  }
+  ngOnInit(): void {
+    this.writter("Vous êtes une entreprise petite ou grande, un particulier, etc... nous vous proposons une solution numérique adapter à votre besoins et à vos exigences pour vous faire connaître un site de votre choix, c'est vous le boss ! ")
   }
 }
