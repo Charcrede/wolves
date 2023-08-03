@@ -13,7 +13,8 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner rounded">
                   <div class="carousel-item active" *ngFor="let image of carousel.images">
-                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded" width="500" >
+                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded"
+                              width="500">
                   </div>
             </div>
             <!-- Left and right controls/icons -->
@@ -35,7 +36,8 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner rounded">
                   <div class="carousel-item active" *ngFor="let image of carousel.images">
-                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded" width="500" >
+                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded"
+                              width="500">
                   </div>
             </div>
             <!-- Left and right controls/icons -->
@@ -57,7 +59,8 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner rounded">
                   <div class="carousel-item active" *ngFor="let image of carousel.images">
-                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded" width="500" >
+                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded"
+                              width="500">
                   </div>
             </div>
             <!-- Left and right controls/icons -->
@@ -68,6 +71,19 @@
                   <span class="carousel-control-next-icon"></span>
             </button>
       </div>
+</div>
 
-     
+<div class="row text-center">
+      <div class="col-sm-4">
+            <label for="favcolor" class="mt-2 mb-2">Select your favorite color primary :</label><br>
+            <input type="color" id="favcolor" value="#ff0000" class="">
+      </div>
+      <div class="col-sm-4">
+            <label for="favcolor" class="mt-2 mb-2">Select your favorite color secondary :</label><br>
+            <input type="color" id="favcolor" value="#0000ff" class="">
+      </div>
+      <div class="col-sm-4">
+            <label for="favcolor" class="mt-2 mb-2">Select your favorite color tertiary :</label><br>
+            <input type="color" id="favcolor" value="#008000" class="">
+      </div>
 </div>
