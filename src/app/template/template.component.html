@@ -1,0 +1,93 @@
+<!-- carousel.component.html -->
+<div class="row mt-3 mb-3 px-2">
+
+      <!-- Carousel -->
+      <div id="demo" class="carousel slide col-sm-4" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner rounded">
+                  <div class="carousel-item active" *ngFor="let image of carousel.images">
+                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded"
+                              width="500">
+                  </div>
+            </div>
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+            </button>
+      </div>
+      <div id="demos" class="carousel slide col-sm-4" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#demos" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#demos" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#demos" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner rounded">
+                  <div class="carousel-item active" *ngFor="let image of carousel.images">
+                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded"
+                              width="500">
+                  </div>
+            </div>
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demos" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demos" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+            </button>
+      </div>
+      <div id="dem" class="carousel slide col-sm-4" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#dem" data-bs-slide-to="0" class="active"></button>
+                  <button type="button" data-bs-target="#dem" data-bs-slide-to="1"></button>
+                  <button type="button" data-bs-target="#dem" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner rounded">
+                  <div class="carousel-item active" *ngFor="let image of carousel.images">
+                        <img [src]="image.imageUrl" alt="Image {{ image.id }}" class="d-block w-100 rounded"
+                              width="500">
+                  </div>
+            </div>
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#dem" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#dem" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+            </button>
+      </div>
+      <div style="background-color: rgb(255, 255, 255);">
+            <p> bonjour <i class="fa-solid fa-ellipsis fa-beat-fade" style="font-size: 4rem;"></i></p>
+      </div>
+     
+</div>
+
+<div class="row text-center">
+      <div class="col-sm-4">
+            <label for="favcolor" class="mt-2 mb-2">Select your favorite color primary :</label><br>
+            <input type="color" id="favcolor" value="#ff0000" class="">
+      </div>
+      <div class="col-sm-4">
+            <label for="favcolor" class="mt-2 mb-2">Select your favorite color secondary :</label><br>
+            <input type="color" id="favcolor" value="#0000ff" class="">
+      </div>
+      <div class="col-sm-4">
+            <label for="favcolor" class="mt-2 mb-2">Select your favorite color tertiary :</label><br>
+            <input type="color" id="favcolor" value="#008000" class="">
+      </div>
+</div>

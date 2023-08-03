@@ -1,4 +1,4 @@
-import { Categorie } from "./categorie"; // inportation de la class catégorie
+import { Categorie, Themes } from "./categorie"; // inportation de la class catégorie
 
 /**
  * @CATEGORIES Le grand tableau qui contient les différents catégorie instancier a partir de la class categorie
@@ -8,45 +8,82 @@ export const CATEGORIES : Categorie[] =[
     {
         "id": "1",
         "name": "Automobile",
-        "seen": false,
+        "state": false,
         "choose": false
     },
     {
         "id": "2",
         "name": "Restauration",
-        "seen": false,
+        "state": false,
         "choose": false
     },
     {
         "id": "3",
         "name": "Finance",
-        "seen": false,
+        "state": false,
         "choose": false
     },
     {
         "id": "4",
         "name": "Sport",
-        "seen": false,
+        "state": false,
         "choose": false
     },
     {
         "id": "5",
         "name": "Design",
-        "seen": false,
+        "state": false,
         "choose": false
     },
     {
         "id": "6",
         "name": "Technologie",
-        "seen": false,
+        "state": false,
         "choose": false
     },
     {
         "id": "7",
         "name": "marseille",
-        "seen": false,
+        "state": false,
         "choose": false
     }
 ];
+export const THEMES : Themes[] = [
+    {
+        "id" : "1",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+    {
+        "id" : "2",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+    {
+        "id" : "3",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+    {
+        "id" : "4",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+    {
+        "id" : "5",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+    {
+        "id" : "6",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+    {
+        "id" : "7",
+        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        
+    },
+]
 
 
