@@ -2,6 +2,8 @@ import { trigger, style, animate, transition, query, stagger } from '@angular/an
 
 export const fadeInAnimation = trigger('fadeInAnimation', [
       transition(':enter', [
+            style({ opacity: 0 }),
+            animate('3s ease', style({ opacity: 1 })),
             query(':enter', [
                   style({ opacity: 0, transform: 'translateX(-500px)' }),
                   stagger(100, [
@@ -11,7 +13,5 @@ export const fadeInAnimation = trigger('fadeInAnimation', [
             query(':leave', [
                   animate('300ms', style({ opacity: 0 }))
             ], { optional: true }),
-            style({ opacity: 0 }),
-            animate('3s ease', style({ opacity: 1 })),
       ])
 ])
