@@ -1,4 +1,4 @@
-<div [@fadeInAnimation] class="wraper">
+<div class="wraper" id="choice">
     <div class="title">
         <h1>Chatbot</h1>
     </div>
@@ -21,7 +21,12 @@
             </div>
         </div>
     </div>
-    <p *ngIf="selectedCategorie" class="bulb bulb-head b-shadow">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
+    <div class="categorie">
+        <ul>
+            <li class="btn" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)" *ngIf="categorie.state">{{categorie.name}}</a></li>
+        </ul>
+    </div>
+    <p class="bulb bulb-head b-shadow" *ngIf="selectedCategorie">Vous avez choisi la catégorie : {{selectedCategorie}}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
     <div *ngIf="categorieThemes">
         <p class="bulb bulb-foot b-shadow">Maintenant que vous avez choisi votre catégorie veuillez choisir le theme que vous voulez :</p>
 
@@ -46,4 +51,8 @@
             </ul>
         </div>
     </div>
+    <div><input type="text" placeholder="Entrer votre texte " class="form-control form-control-lg disabled"> <button class="btn btn-success" (click)="startForm(temp)">Enter</button></div>
+    <div class="parent"> <!-- div utiliser pour faire le loading -->
+        <div></div> <div></div> <div></div>
+  </div>
 </div>
