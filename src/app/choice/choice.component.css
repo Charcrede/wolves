@@ -58,7 +58,7 @@ ul{
     padding: 0
 }
 
- .categorie ul li a{
+ .categorie ul li a, .categorie p{
     display: block;
     text-decoration: none;
     color: white;
@@ -67,6 +67,9 @@ ul{
     background-color: #4a1294de;
     padding: 0.5rem 1rem;
 } 
+.categorie p{
+    display: inline-block;
+}
 /* theme de site  */
 .theme li{
     background-color: #fffffff6;
@@ -82,7 +85,13 @@ ul{
     padding: 0.5rem 0.8rem;
     border-radius: 0.6rem;
 }
-
+.usersEnter{
+    background-color: #b569fc !important; 
+    padding: .5rem;
+    position: relative;
+    right: -48%;
+    color: white;
+}
 /* Chat containers */
 .container {
     /* border: 2px solid #dedede; */
@@ -93,13 +102,17 @@ ul{
     font-size: 1rem;
     line-height: 1.2;
   }
-  
   /* Darker chat container */
   .darker {
     border-color: #ccc;
     background-color: #ddd;
   }
-  
+  .buttonChat{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 2rem;
+  }
   /* Clear floats */
   .container::after {
     content: "";
@@ -133,4 +146,8 @@ ul{
   .time-left {
     float: left;
     color: #999;
+  }
+  .parent{
+    display: flex;
+    gap: 0.5rem;
   }
