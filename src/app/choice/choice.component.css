@@ -2,20 +2,20 @@
  var:
 } */
 /* Modification des bulbes de conversation */
-.wraper {
+.wraper{
     line-height: 1.6;
 }
-.title{
-    background-color: rgb(118, 23, 207);
+.title h1{
+    background-color: #b569fc;
+    text-align: center;
+    color: white;
     width: 100%;
-    
+    border-radius: 0.5rem 0.5rem 0 0;
 }
-
-.dialogue {
+.dialogue{
     margin-bottom: 0.5rem;
 }
-
-.bulb {
+.bulb{
     display: inline-block;
     margin-bottom: 0.1rem;
     margin-left: 0.2rem;
@@ -25,32 +25,29 @@
     line-height: 1.4;
     background-color: #ffffff;
 }
-
 /* .rounded{
 
 } */
-.b-shadow {
+.b-shadow{
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
-
-.bd-rounded {
+.bd-rounded{
     border-radius: 1.5rem 1.5rem 1.5rem 0rem;
 }
-
-.bulb-head {
+.bulb-head{
     border-radius: 0px 25px 25px 0px;
 }
 
-.bulb-center {
+.bulb-center{
     border-radius: 0px 25px 25px 0px;
 }
 
-.bulb-foot {
+.bulb-foot{
     border-radius: 0px 25px 25px 25px;
 }
 
 /* Modification des catégories de site */
-ul {
+ul{
     list-style: none;
     padding: 0 0 0 3.5rem;
     display: flex;
@@ -58,33 +55,99 @@ ul {
 }
 
 .categorie ul li{
-    background-color: #4a1294de;
-    border: none;
-    padding: 0.3rem 0.5rem;
+    padding: 0
 }
 
-.categorie ul li a{
-    /* display: block; */
-    padding: 0;
+ .categorie ul li a, .categorie p{
+    display: block;
     text-decoration: none;
     color: white;
     font-weight: 600;
-    border: none;
+    border-radius: 0.5rem;
+    background-color: #4a1294de;
+    padding: 0.5rem 1rem;
+} 
+.categorie p{
+    display: inline-block;
 }
 /* theme de site  */
-.theme li {
+.theme li{
     background-color: #fffffff6;
     border: none;
     padding: 0.3rem 0.5rem;
-
+    
 }
-
 .theme li a {
     color: #4a1294de;
     font-weight: 500;
 }
-
-.bd-round {
+.bd-round{
     padding: 0.5rem 0.8rem;
     border-radius: 0.6rem;
 }
+.usersEnter{
+    background-color: #b569fc !important; 
+    padding: .5rem;
+    position: relative;
+    right: -48%;
+    color: white;
+}
+/* Chat containers */
+.container {
+    /* border: 2px solid #dedede; */
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Poppins';
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  /* Darker chat container */
+  .darker {
+    border-color: #ccc;
+    background-color: #ddd;
+  }
+  .buttonChat{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 2rem;
+  }
+  /* Clear floats */
+  .container::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Style images */
+  .container img {
+    float: left;
+    max-width: 40px;
+    width: 50%;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  
+  /* Style the right image */
+  .container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+  }
+  
+  /* Style time text */
+  .time-right {
+    float: right;
+    color: #aaa;
+  }
+  
+  /* Style time text */
+  .time-left {
+    float: left;
+    color: #999;
+  }
+  .parent{
+    display: flex;
+    gap: 0.5rem;
+  }

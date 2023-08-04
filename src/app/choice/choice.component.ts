@@ -22,9 +22,9 @@ export class ChoiceComponent implements OnInit {
       themes: Themes[] = THEMES;
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
-            this.categories.forEach(el => {
-                  el.state = false;
-            })
+            // this.categories.forEach(el => {
+            //       el.state = false;
+            // })
             this.selectedCategorie.state = true;
             this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);

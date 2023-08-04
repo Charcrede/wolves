@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" [ngClass]="{'taille' : getStarted}" *ngIf="getStarted">
     <div class="chat b-shadow">
-        <app-choice *ngIf="getStarted" (templ)="showTemp($event)"></app-choice>
+        <app-choice (templ)="showTemp($event)"></app-choice>
         <div *ngIf="template">
             <app-template *ngFor="let carousel of carousels" [carousel]="carousel"></app-template>
         </div>
