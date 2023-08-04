@@ -2,18 +2,21 @@
  var:
 } */
 /* Modification des bulbes de conversation */
-.wraper{
+.wraper {
     line-height: 1.6;
 }
-.title{
+
+.title {
     background-color: rgb(118, 23, 207);
     width: 100%;
-    
+
 }
-.dialogue{
+
+.dialogue {
     margin-bottom: 0.5rem;
 }
-.bulb{
+
+.bulb {
     display: inline-block;
     margin-bottom: 0.1rem;
     margin-left: 0.2rem;
@@ -23,42 +26,45 @@
     line-height: 1.4;
     background-color: #ffffff;
 }
+
 /* .rounded{
 
 } */
-.b-shadow{
+.b-shadow {
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
 }
-.bd-rounded{
+
+.bd-rounded {
     border-radius: 1.5rem 1.5rem 1.5rem 0rem;
 }
-.bulb-head{
+
+.bulb-head {
     border-radius: 0px 25px 25px 0px;
 }
 
-.bulb-center{
+.bulb-center {
     border-radius: 0px 25px 25px 0px;
 }
 
-.bulb-foot{
+.bulb-foot {
     border-radius: 0px 25px 25px 25px;
 }
 
 /* Modification des catégories de site */
-ul{
+ul {
     list-style: none;
     padding: 0;
     display: flex;
     gap: 1rem;
 }
 
-.categorie ul li{
+.categorie ul li {
     background-color: #4a1294de;
     border: none;
     padding: 0.3rem 0.5rem;
 }
 
-.categorie ul li a{
+.categorie ul li a {
     /* display: block; */
     padding: 0;
     text-decoration: none;
@@ -66,18 +72,65 @@ ul{
     font-weight: 600;
     border: none;
 }
+
 /* theme de site  */
-.theme li{
+.theme li {
     background-color: #fffffff6;
     border: none;
     padding: 0.3rem 0.5rem;
-    
+
 }
+
 .theme li a {
     color: #4a1294de;
     font-weight: 500;
 }
-.bd-round{
+
+.bd-round {
     padding: 0.5rem 0.8rem;
     border-radius: 0.6rem;
 }
+
+/* Style pour l'animation des trois points */
+.parent {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+
+}
+
+.parent div {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    animation: loader-animation 1.5s infinite;
+}
+
+.parent div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.parent div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.parent div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loader-animation {
+    from {
+        transform: scale(1.5);
+        background-color: rgb(0, 0, 0);
+    }
+
+    to {
+        transform: scale(1);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* fin de l'animation */
