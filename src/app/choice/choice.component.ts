@@ -11,10 +11,10 @@ import { ServiceService } from '../service.service';
       animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
+  constructor(private service: ServiceService) { };
       index: number = 0;
       selectedCategorie!: Categorie;
       categorieThemes!: Themes;
-      constructor(private service: ServiceService) { };
       categorie: Categorie[] = CATEGORIES
       themes: Themes[] = THEMES;
       onSelect(categorie: Categorie) {
