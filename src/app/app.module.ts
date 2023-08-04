@@ -9,6 +9,7 @@ import { ChoiceComponent } from './choice/choice.component';
 import { TemplateComponent } from './template/template.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { MainComponent } from './main/main.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
       declarations: [
@@ -17,12 +18,13 @@ import { MainComponent } from './main/main.component';
             ChoiceComponent,
             TemplateComponent,
             FormulaireComponent,
-            MainComponent
+            MainComponent,
       ],
       imports: [
             BrowserModule,
             AppRoutingModule,
-            BrowserAnimationsModule
+            BrowserAnimationsModule,
+            ReactiveFormsModule
       ],
       providers: [],
       bootstrap: [AppComponent]
