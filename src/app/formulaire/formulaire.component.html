@@ -1,24 +1,23 @@
+<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light" [@fadeInAnimation]>
+      <h2 [@fadeInAnimation]>Finalisez et Recuperez votre site </h2>
+      <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" method="post">
+            <div class="form-floating mb-3 mt-3">
+                  <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom"
+                        name="name" ngModel ="name" required>
+                  <label for="nom">Nom</label>
+            </div>
+            <div class="form-floating mt-3 mb-3">
+                  <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter le prenom "
+                        name="surname" ngModel ="surname">
+                  <label for="prenom">Prénom</label>
+            </div>
+            <div class="form-floating mt-3 mb-3">
+                  <input type="text" class="form-control form-control-lg" id="pwd" placeholder="Enter email"
+                        name="email" ngModel ="email" required>
+                  <label for="email">Email</label>
+            </div>
 
-
-<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light bg-gradient">
-    <h2>Finalisez et Recuperez votre site </h2>
-    <p>Votre site n'attend que vous ! </p>
-    <form action="/action_page.php">
-      <div class="form-floating mb-3 mt-3">
-        <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom" name="nom">
-        <label for="nom">Nom</label>
-      </div>
-      <div class="form-floating mt-3 mb-3">
-        <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter le prénom " name="prénom">
-        <label for="prénom">Prénom</label>
-      </div>
-      <div class="form-floating mt-3 mb-3">
-        <input type="text" class="form-control form-control-lg" id="pwd" placeholder="Enter email" name="email">
-        <label for="email">Email</label>
-      </div>
-       
-      <button type="submit" class="btn btn-primary w-100 fw-bold py-3 ">Submit</button>
-    </form>
-  </div>
-  
-   
+            <button type="submit" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
+      </form>
+</div>

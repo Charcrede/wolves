@@ -1,12 +1,11 @@
 .header {
-    background-image: url("../../assets/images/bg-header1.jpg");
-    background-position: center;
+    background-image: url("../../assets/images/bg2.jpg");
+    /* background-position: center; */
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
     max-width: 100%;
-    padding-top: 0;
-    margin: 0;
-
+    padding-block: 0.5rem;
     color: white;
 }
 
@@ -21,11 +20,21 @@
     justify-content: space-between;
     color: #fff;
     margin-block: 0px;
-    padding-block: 2rem;
-    padding-inline: 4rem;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
     gap: 1rem;
 
     list-style: none;
+}
+
+.contenue {
+    margin: 1rem;
+    /* text-align: center; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    margin-top: 5rem;
 }
 
 .menu1 li a {
@@ -33,11 +42,12 @@
 }
 
 .menu1 li a:hover {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #010028;
 }
 
 .header h1 {
+    margin-bottom: 3rem;
     font-weight: bold;
     font-size: 3rem;
 }
@@ -48,15 +58,14 @@
     font-size: 1rem;
 }
 
-
 .texte1 {
     width: 30rem;
     margin: 1rem;
 }
 
 .texte2 {
-    width: 50rem;
-    font-size: 1.5rem;
+    width: 60%;
+    font-size: 1rem;
 }
 
 .header .menu1 {
@@ -68,39 +77,31 @@
     font-weight: bold;
 }
 
-a {
+.logo a {
     text-decoration: none;
-    color: #fff;
+    color: #8f14c0;
 }
 
 .button {
-    margin: 1rem;
-    font-size: 1.5rem;
+    margin: 3rem;
+    font-size: 1.1rem;
 }
 
 .button a {
     background-color: #fff;
     color: #010028;
-    border: 1px solid white;
+    border: 0.2rem solid white;
     padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+    border-radius: 2.2rem;
+    transition: all 2s;
+    /* border-radius: 25px; */
+    text-decoration: none;
 }
 
 
 .button a:hover{
     background-color: #010028;
     color: #fff;
-    border: 1px solid white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000
 }
 
-
-.contenue {
-    margin: 8rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}

@@ -1,5 +1,6 @@
 
 import { Component, Input } from '@angular/core';
+import { fadeInAnimation } from '../animation.module';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { ServiceService } from '../service.service';
@@ -7,7 +8,8 @@ import { ServiceService } from '../service.service';
 @Component({
       selector: 'app-template',
       templateUrl: './template.component.html',
-      styleUrls: ['./template.component.css']
+      styleUrls: ['./template.component.css'],
+      animations: [fadeInAnimation]
 })
 export class TemplateComponent {
       checked1:boolean =  false;

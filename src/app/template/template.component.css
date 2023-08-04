@@ -99,8 +99,8 @@ div.carousel-item img {
 }
 
 input[type=color] {
-  width: 100px;
-  height: 100px;
+  width: 60%;
+  height: 2rem;
   border:  0;
 }
 .carousel-button{
@@ -139,4 +139,5 @@ input[type=color] {
 }
 .templateInput:hover~div>div{
   transform: scale(1.2);
+  border-radius: 0.2rem;
 }
