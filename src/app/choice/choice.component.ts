@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 // import { fadeInAnimation } from '../animation.module';
 import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
@@ -12,7 +12,10 @@ import { ServiceService } from '../service.service';
 })
 export class ChoiceComponent implements OnInit {
   constructor(private service: ServiceService) { };
+  @Output() form : EventEmitter<boolean> = new EventEmitter();
+  @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
+      temp: boolean = true;
       selectedCategorie!: Categorie;
       categorieThemes!: Themes;
       categories: Categorie[] = CATEGORIES
@@ -39,6 +42,9 @@ export class ChoiceComponent implements OnInit {
       }
       ngOnInit(): void {
             this.retard(this.categories)
+      }
+      startForm(bool : boolean){
+        this.templ.emit(bool);
       }
       ngOnChanges() {
       }
