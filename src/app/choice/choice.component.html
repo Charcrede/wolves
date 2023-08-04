@@ -3,8 +3,23 @@
         <h1>Chatbot</h1>
     </div>
     <div class="dialogue">
-        <p class="bulb bulb-head mt-3 b-shadow">Bonjour et bienvenue, sur notre site</p>
-        <p class="bulb bulb-foot b-shadow">Pour commencer la création de votre site web, veuillez nous dire de quel type de site avez vous besoin</p>
+        <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6">
+            <img src="../../assets/images/avatar2.png" alt="Avatar">
+            <p class="mb-0">Bonjour et bienvenue, sur notre site</p>
+            <span class="time-right">11:00</span>
+        </div>
+        <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8">
+            <img src="../../assets/images/avatar2.png" alt="Avatar">
+            <p>Pour commencer la création de votre site web, veuillez nous dire de quel type
+                de site avez vous besoin</p>
+            <span class="time-right">11:00</span>
+            <div class="categorie">
+                <ul>
+                    <li class="btn" role="button" *ngFor="let categorie of categories"><a 
+                            (click)="onSelect(categorie)">{{categorie.name}}</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="categorie">
         <ul>
@@ -14,9 +29,25 @@
     <p *ngIf="selectedCategorie" class="bulb bulb-head b-shadow">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
     <div *ngIf="categorieThemes">
         <p class="bulb bulb-foot b-shadow">Maintenant que vous avez choisi votre catégorie veuillez choisir le theme que vous voulez :</p>
+
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8">
+        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <p *ngIf="selectedCategorie">Vous avez choisi la catégorie : {{selectedCategorie}},
+            si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
+        <span class="time-right">11:00</span>
+        
+    </div>
+  
+
+    <!-- <p class="bulb bulb-head b-shadow" *ngIf="selectedCategorie">Vous avez choisi la catégorie : {{selectedCategorie}},
+        si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p> -->
+    <div *ngIf="categorieThemes">
+        <p class="bulb bulb-foot b-shadow">Maintenant que vous avez choisi votre catégorie veuillez choisir le theme que
+            vous voulez :</p>
         <div class="theme">
             <ul class="">
-                <li class="bd-round b-shadow" role="button" *ngFor="let them of categorieThemes.themes" ><a *ngIf="them.state">{{them.name}}</a></li>
+                <li class="bd-round b-shadow" role="button" *ngFor="let them of categorieThemes.themes"><a
+                        *ngIf="them.state">{{them.name}}</a></li>
             </ul>
         </div>
     </div>
