@@ -29,12 +29,8 @@
 
 .contenue {
     margin: 1rem;
-    /* text-align: center; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     margin-top: 5rem;
+    margin-left: 5rem;
 }
 
 .menu1 li a {
@@ -47,7 +43,8 @@
 }
 
 .header h1 {
-    margin-bottom: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
     font-weight: bold;
     font-size: 3rem;
 }
@@ -58,14 +55,10 @@
     font-size: 1rem;
 }
 
-.texte1 {
-    width: 30rem;
-    margin: 1rem;
-}
-
 .texte2 {
-    width: 60%;
-    font-size: 1rem;
+    width: 75%;
+    font-size: 1.6rem;
+    font-family: 'Poppins';
 }
 
 .header .menu1 {
@@ -80,28 +73,28 @@
 .logo a {
     text-decoration: none;
     color: #8f14c0;
+    font-family: "Audiowide", sans-serif;
 }
 
 .button {
-    margin: 3rem;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-block: 4rem;
 }
 
 .button a {
     background-color: #fff;
-    color: #010028;
-    border: 0.2rem solid white;
+    color: #200554;
+    border: 2px solid white;
     padding: 0.5rem 1.5rem;
     border-radius: 2.2rem;
-    transition: all 2s;
-    /* border-radius: 25px; */
+    transition: all .5s;
     text-decoration: none;
 }
 
 
-.button a:hover{
-    background-color: #010028;
+.button a:hover {
+    background-color: #200554;
     color: #fff;
     box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000
 }
-
