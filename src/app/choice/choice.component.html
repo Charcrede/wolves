@@ -1,5 +1,4 @@
 <div [@fadeInAnimation] class="wraper">
-    <!-- <div class="globe"><img src="../../assets/globe.webp" alt=""></div> -->
     <div class="title">
         <h1>Chatbot</h1>
     </div>
@@ -13,7 +12,7 @@
         </ul>
     </div>
     <p *ngIf="selectedCategorie" class="bulb bulb-head b-shadow">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>
-    <div *ngIf="categorieThemes" cla>
+    <div *ngIf="categorieThemes">
         <p class="bulb bulb-foot b-shadow">Maintenant que vous avez choisi votre catégorie veuillez choisir le theme que vous voulez :</p>
         <div class="theme">
             <ul class="">
