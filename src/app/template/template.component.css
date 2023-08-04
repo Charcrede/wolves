@@ -104,3 +104,41 @@ input[type=color] {
   border:  0;
   border-radius: 0.2rem;
 }
+.carousel-button{
+  position: relative;
+  overflow: hidden;
+}
+.carousel{
+  overflow: hidden;
+  
+}
+.dnone{
+  display: none;
+}
+.templateInput{
+  position: absolute;
+  z-index: 12;
+  top: 0px;
+  bottom: 00px;
+  left: 12px;
+  right: 10px;
+  border-radius: 10px;
+  border: none;
+  opacity: 0;
+  transition: 1s;
+  font-size: 7rem;
+}
+.templateInput~div>div{
+  transition: 1s;
+}
+.templateInput:hover{
+  opacity: .5;
+  border-radius: 0;
+}
+.fa{
+  opacity: .5;
+}
+.templateInput:hover~div>div{
+  transform: scale(1.2);
+  border-radius: 0.2rem;
+}

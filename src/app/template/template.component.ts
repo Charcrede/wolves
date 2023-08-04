@@ -12,7 +12,9 @@ import { ServiceService } from '../service.service';
       animations: [fadeInAnimation]
 })
 export class TemplateComponent {
-
+      checked1:boolean =  false;
+      checked2:boolean =  false;
+      checked3:boolean =  false;
       constructor(
             private service: ServiceService,
       ) { }
@@ -27,6 +29,15 @@ export class TemplateComponent {
 
       nextSlide(): void {
             this.currentIndex = (this.currentIndex + 1) % this.carousel.images.length;
+      }
+      select1(){
+            this.checked1 = true;
+      }
+      select2(){
+            this.checked2 = true;
+      }
+      select3(){
+            this.checked3 = true;
       }
 
 }
