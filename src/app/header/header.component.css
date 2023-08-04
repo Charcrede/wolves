@@ -1,6 +1,6 @@
 .header {
-    background-image: url("../../assets/images/bg-header1.jpg");
-    background-position: center;
+    background-image: url("../../assets/images/bg2.jpg");
+    /* background-position: center; */
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -29,11 +29,11 @@
 
 .contenue {
     margin: 1rem;
-    text-align: center;
-    display: flex;
+    /* text-align: center; */
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     margin-top: 5rem;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .menu1 li a:hover {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #010028;
 }
 
@@ -64,8 +64,8 @@
 }
 
 .texte2 {
-    width: 70%;
-    font-size: 1.5rem;
+    width: 60%;
+    font-size: 1rem;
 }
 
 .header .menu1 {
@@ -77,14 +77,14 @@
     font-weight: bold;
 }
 
-a {
+.logo a {
     text-decoration: none;
-    color: #fff;
+    color: #8f14c0;
 }
 
 .button {
     margin: 3rem;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .button a {
@@ -93,6 +93,7 @@ a {
     border: 1px solid white;
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
+    text-decoration: none;
 }
 
 
