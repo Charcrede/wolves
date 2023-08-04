@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInAnimation } from '../animation.module';
+// import { fadeInAnimation } from '../animation.module';
 import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
 import { ServiceService } from '../service.service';
@@ -8,18 +8,18 @@ import { ServiceService } from '../service.service';
       selector: 'app-choice',
       templateUrl: './choice.component.html',
       styleUrls: ['./choice.component.css'],
-      animations: [fadeInAnimation]
+      // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
+  constructor(private service: ServiceService) { };
       index: number = 0;
       selectedCategorie!: Categorie;
       categorieThemes!: Themes;
-      constructor(private service: ServiceService) { };
-      categorie: Categorie[] = CATEGORIES
+      categories: Categorie[] = CATEGORIES
       themes: Themes[] = THEMES;
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
-            this.categorie.forEach(el => {
+            this.categories.forEach(el => {
                   el.state = false;
             })
             this.selectedCategorie.state = true;
@@ -32,12 +32,13 @@ export class ChoiceComponent implements OnInit {
             setInterval(() => {
                   if (i < array.length) {
                         array[i].state = true;
+                        console.log(array[i]);
                         i++
                   }
             }, 500);
       }
       ngOnInit(): void {
-            this.retard(this.categorie)
+            this.retard(this.categories)
       }
       ngOnChanges() {
       }

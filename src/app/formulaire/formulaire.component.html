@@ -1,20 +1,20 @@
-<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light" [@fadeInAnimation]>
+<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light">
       <h2 [@fadeInAnimation]>Finalisez et Recuperez votre site </h2>
       <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()" method="post">
             <div class="form-floating mb-3 mt-3">
                   <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom"
-                        name="name" ngModel ="name" required>
+                        name="name" required>
                   <label for="nom">Nom</label>
             </div>
             <div class="form-floating mt-3 mb-3">
                   <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter le prenom "
-                        name="surname" ngModel ="surname">
+                        name="surname">
                   <label for="prenom">Prénom</label>
             </div>
             <div class="form-floating mt-3 mb-3">
                   <input type="text" class="form-control form-control-lg" id="pwd" placeholder="Enter email"
-                        name="email" ngModel ="email" required>
+                        name="email" required>
                   <label for="email">Email</label>
             </div>
 

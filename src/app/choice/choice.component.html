@@ -8,7 +8,7 @@
     </div>
     <div class="categorie">
         <ul>
-            <li class="btn btn" role="button" *ngFor="let cat of categorie"><a *ngIf="cat.state" (click)="onSelect(cat)">{{cat.name}}</a></li>
+            <li class="btn" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)">{{categorie.name}}</a></li>
         </ul>
     </div>
     <p *ngIf="selectedCategorie" class="bulb bulb-head b-shadow">Vous avez choisi la catégorie : {{ selectedCategorie.name }}, si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p>

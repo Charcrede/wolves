@@ -51,7 +51,7 @@ export const CATEGORIES : Categorie[] =[
 export const THEMES : Themes[] = [
     {
         "id" : "1",
-        "themes" :[{"state" : false, "name": 'lorem'},{"state" : false, "name": 'ipsum'}, {"state" : false, "name": 'sit amet'}],
+        "themes" :[{"state" : false, "name": 'cc'},{"state" : false, "name": 'nh'}, {"state" : false, "name": 'sfdqsqdf'}],
         
     },
     {
