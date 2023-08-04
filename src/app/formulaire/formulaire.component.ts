@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { fadeInAnimation } from '../animation.module';
-import { ServiceService } from '../service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { fadeInAnimation } from '../animation.module'
 
 @Component({
       selector: 'app-formulaire',
@@ -9,18 +9,26 @@ import { ServiceService } from '../service.service';
       animations: [fadeInAnimation]
 })
 export class FormulaireComponent {
-      
-      constructor(private service: ServiceService) { }
 
       name!: string;
       surname!: string;
       email!: string;
-      
-      getData () : void {
-            console.log('name');
-            console.log('surname');
-            console.log('email');
+      myForm: FormGroup;
+
+      constructor(
+            private formBuilder: FormBuilder
+      ) {
+            this.myForm = this.formBuilder.group({
+                  name: ['', Validators.required],
+                  surname: ['', Validators.required],
+                  email: ['', [Validators.required, Validators.email]]
+            });
+
+      };
+      onSubmit() {
+            if (this.myForm.valid) {
+                  console.log(this.myForm.value);
+                  // Effectuez des actions, telles que l'envoi des données au serveur.
+            }
       }
-
-
 }

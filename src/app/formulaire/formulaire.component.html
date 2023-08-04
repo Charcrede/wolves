@@ -1,7 +1,7 @@
 <div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light" [@fadeInAnimation]>
-      <h2>Finalisez et Recuperez votre site </h2>
-      <p>Votre site n'attend que vous ! </p>
-      <form action="/" (ngSubmit)="getData()" method="post">
+      <h2 [@fadeInAnimation]>Finalisez et Recuperez votre site </h2>
+      <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" method="post">
             <div class="form-floating mb-3 mt-3">
                   <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom"
                         name="name" ngModel ="name" required>
