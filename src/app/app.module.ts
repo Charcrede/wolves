@@ -9,13 +9,8 @@ import { ChoiceComponent } from './choice/choice.component';
 import { TemplateComponent } from './template/template.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { MainComponent } from './main/main.component';
-<<<<<<< .merge_file_X259Gb
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
-=======
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
->>>>>>> .merge_file_COtOuc
 
 @NgModule({
       declarations: [
@@ -31,10 +26,7 @@ import { CommonModule } from '@angular/common';
             AppRoutingModule,
             BrowserAnimationsModule,
             ReactiveFormsModule,
-<<<<<<< .merge_file_X259Gb
-=======
             CommonModule,
->>>>>>> .merge_file_COtOuc
             FormsModule
       ],
       providers: [],
