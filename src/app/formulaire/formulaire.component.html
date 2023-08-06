@@ -1,4 +1,4 @@
-<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light">
+<!-- <div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light">
       <h2 [@fadeInAnimation]>Finalisez et Recuperez votre site </h2>
       <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
       <form [formGroup]="myForm" (ngSubmit)="onSubmit()" method="post">
@@ -20,4 +20,41 @@
 
             <button type="submit" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
       </form>
+</div> -->
+<div>
+      <form (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
+
+
+            <label for="lastName"> Nom </label>
+            <input type="text" name="lastName" id="lastName" #lastName="ngModel" required [(ngModel)]="userModel.lastName">
+
+            <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+                  Votre Nom est réquise
+            </div>
+
+            <label for="firstName"> Prenom </label>
+            <input type="text" name="firstName" id="firstName" #firstName="ngModel" required [(ngModel)]="userModel.firstName">
+
+            <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+                  Votre Prénom est réquise
+            </div>
+
+            <label for="mail"> Email </label>
+            <input type="email" name="mail" id="mail" #mail="ngModel" required [(ngModel)]="userModel.mail">
+
+            <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
+                  Votre Email est réquise
+            </div>
+
+            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()"> Valider </button>
+      </form>
 </div>
+<style>
+      .ng-valid[required], .ng-valid.required {
+            border-left: 5px solid #42A948;
+      }
+
+      .ng-invalid:not(form) {
+            border-left: 5px solid #a94442;
+      }
+</style>
