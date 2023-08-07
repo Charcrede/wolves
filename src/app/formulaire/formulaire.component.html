@@ -1,60 +1,23 @@
-<!-- <div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light">
+<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light">
       <h2 [@fadeInAnimation]>Finalisez et Recuperez votre site </h2>
       <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
-      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" method="post">
+      <form (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
             <div class="form-floating mb-3 mt-3">
                   <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom"
-                        name="name" required>
+                        name="name" [(ngModel)]="userModel.lastName" required>
                   <label for="nom">Nom</label>
             </div>
             <div class="form-floating mt-3 mb-3">
                   <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter le prenom "
-                        name="surname">
+                        name="surname" [(ngModel)]="userModel.firstName" required>
                   <label for="prenom">Prénom</label>
             </div>
             <div class="form-floating mt-3 mb-3">
                   <input type="text" class="form-control form-control-lg" id="pwd" placeholder="Enter email"
-                        name="email" required>
+                        name="email" [(ngModel)]="userModel.mail" required>
                   <label for="email">Email</label>
             </div>
 
-            <button type="submit" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
-      </form>
-</div> -->
-<div>
-      <form (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
-
-
-            <label for="lastName"> Nom </label>
-            <input type="text" name="lastName" id="lastName" #lastName="ngModel" required [(ngModel)]="userModel.lastName">
-
-            <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
-                  Votre Nom est réquise
-            </div>
-
-            <label for="firstName"> Prenom </label>
-            <input type="text" name="firstName" id="firstName" #firstName="ngModel" required [(ngModel)]="userModel.firstName">
-
-            <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
-                  Votre Prénom est réquise
-            </div>
-
-            <label for="mail"> Email </label>
-            <input type="email" name="mail" id="mail" #mail="ngModel" required [(ngModel)]="userModel.mail">
-
-            <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
-                  Votre Email est réquise
-            </div>
-
-            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()"> Valider </button>
+            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
       </form>
 </div>
-<style>
-      .ng-valid[required], .ng-valid.required {
-            border-left: 5px solid #42A948;
-      }
-
-      .ng-invalid:not(form) {
-            border-left: 5px solid #a94442;
-      }
-</style>

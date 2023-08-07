@@ -7,12 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { count } from 'rxjs';
-let input = document.getElementById('input')
-if (input) {
-      // input.scrollt = input.scrollHeight - input.clientHeight
-      // input.scrollBy({top: 10000000})
-      input.scrollIntoView();
-}
+// if (choice) {
+//       choice.scrollTo(10000,0);
+      
+//       // input.scrollBy({top: 10000000})
+//       // input.scrollIntoView();
+// }
 
 @Component({
       selector: 'app-choice',
@@ -21,7 +21,11 @@ if (input) {
       // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
-  constructor(private service: ServiceService) { };
+  constructor(private service: ServiceService) {
+        let choice = document.getElementById('choice')
+        console.log(choice);
+
+   };
   @Output() form : EventEmitter<boolean> = new EventEmitter();
   @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
@@ -45,7 +49,7 @@ export class ChoiceComponent implements OnInit {
                   //       el.state = false;
                   // })
                   this.selectedCategorie.state = true;
-            this.selectedCategorie.choose = true;
+                  this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
             setTimeout(() => {
