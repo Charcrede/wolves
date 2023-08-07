@@ -10,7 +10,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre plateforme</p>
+            <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre site</p>
             <span class="time-right">{{ times() }} : {{ minutes() }} </span>
         </div>
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8 mx-width" *ngIf="bonj">
@@ -23,14 +23,6 @@
             <p *ngIf="bonj && cate">Pour commencer la création de votre site web, veuillez nous dire de quel type
                 de site avez vous besoin</p>
             <span class="time-right">{{ times() }} : {{ minutes() }}</span>
-        </div>
-        <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="bonj && cate">
-            <img src="../../assets/images/avatar2.png" alt="Avatar">
-            <div class="parent" *ngIf="bonj && !cate "> <!-- div utiliser pour faire le loading -->
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <div class="categorie" *ngIf="cate">
                 <ul>
                     <li class="btn" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)"
@@ -44,7 +36,7 @@
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedCategorie">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
         <p class="mb-0">{{selectedCategorie.name}}</p>
-        <button class="btn btn-outline-light button2">Modifier</button>
+        <button class="btn btn-outline-light float-end">modifiez</button>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedCategorie">
@@ -55,12 +47,17 @@
             <div></div>
         </div>
         <p *ngIf="seeTheme">veuillez entrer le theme de votre site web (entrez uniquement le theme)</p>
-        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
+        <span class="time-right"></span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0]">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
-        <p class="mb-0">{{selectedTheme[0]}}</p>
-        <button class="btn btn-outline-light ">modifiez</button>
+        <div class="parent" *ngIf="!selectedTheme[0]">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p class="mb-0" *ngIf="selectedTheme[0]">{{selectedTheme[0]}}</p>
+        <button class="btn btn-outline-light float-end">modifiez</button>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
 
@@ -86,7 +83,7 @@
         <img src="../../assets/images/avatar2.png" alt="Avatar">
         <p class="mb-0">{{selectedTheme[1]}}</p>
         <button class="btn btn-outline-light float-end">modifiez</button>
-        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
+        <span class="time-right"></span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedTheme[1]">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
@@ -95,20 +92,46 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}},
-            et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques
-            exemples de templates</p>
+        <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template">
-        <app-template *ngFor="let carousel of carousels" [carousel]="carousel"></app-template>
+        <app-template *ngFor="let carousel of carousels" [carousel]="carousel" [showColor]="color"></app-template>
     </div>
-    <form (ngSumit)="themer()" id="input">
-        <div class="position-relative"><input type="text" placeholder="Entrer votre texte "
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="seeColor">
+        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <div class="parent" *ngIf="!colored">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p class="mb-0" *ngIf="colored"> Voulez vous modifiez les couleurs du template ? </p>
+        <button class="btn btn-outline-dark float-end" (click)="showColor()">Oui</button>
+        <button class="btn btn-outline-dark float-end" (click)="hideColor()">Ignorer</button>
+        <span class="time-right"></span>
+    </div>
+    <div class="row text-center pb-3" *ngIf="color">
+        <h3>CHOIX DE COULEURS</h3>
+        <div class="col-sm-4">
+              <label for="favcolor" class="mt-2 mb-2 f-2 fw-3">Select your favorite color primary :</label><br>
+              <input type="color" id="favcolor" value="#ff0000" class="">
+        </div>
+        <div class="col-sm-4">
+              <label for="favcolor" class="mt-2 mb-2">Select your favorite color secondary :</label><br>
+              <input type="color" id="favcolor" value="#0000ff" class="">
+        </div>
+        <div class="col-sm-4">
+              <label for="favcolor" class="mt-2 mb-2">Select your favorite color tertiary :</label><br>
+              <input type="color" id="favcolor" value="#008000" class="">
+        </div>
+        <button class="btn btn-outline-dark" (click)="startForm(temp)"> Terminer</button>
+  </div>
+    <form (ngSumit)="themer()" id="input" class="position-absolute">
+        <div><input type="text" placeholder="Entrer votre texte "
                 class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
                 class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
-        {{inputValue}}
-    </form>
+                {{inputValue}}
+            </form>
 </div>
 <script>
     let choice = document.getElementById('choice');

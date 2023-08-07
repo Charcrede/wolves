@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
 // import { fadeInAnimation } from '../animation.module';
 import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
@@ -9,18 +9,19 @@ import { Carousel } from '../models';
 import { count } from 'rxjs';
 // if (choice) {
 //       choice.scrollTo(10000,0);
-      
+
 //       // input.scrollBy({top: 10000000})
 //       // input.scrollIntoView();
 // }
 
 @Component({
-      selector: 'app-choice',
-      templateUrl: './choice.component.html',
-      styleUrls: ['./choice.component.css'],
-      // animations: [fadeInAnimation]
+    selector: 'app-choice',
+    templateUrl: './choice.component.html',
+    styleUrls: ['./choice.component.css'],
+    // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
+      
       constructor(private service: ServiceService) {
             let choice = document.getElementById('choice')
             console.log(choice);
@@ -29,8 +30,11 @@ export class ChoiceComponent implements OnInit {
       @Output() form : EventEmitter<boolean> = new EventEmitter();
       @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
+      colored: boolean =false;
+      seeColor: boolean = false;
       temp: boolean = true;
       bonj: boolean = false;
+      color: boolean = false;
       cate: boolean = false;
       cate2: boolean = false;
       seeTheme : boolean = false;
@@ -47,7 +51,7 @@ export class ChoiceComponent implements OnInit {
       time: any = "";
       minute:any ="";
 
-      heure: any = this.time + this.minute
+    heure: any = this.time + this.minute
 
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
@@ -97,37 +101,56 @@ export class ChoiceComponent implements OnInit {
             if (this.confirm === 3 && this.fiText) {
                   this.template = true;
             }
-            if (this.confirm === 2) {
-                  setTimeout(() => {
-                        this.fiText = true;
-                  }, 1000);
-            }
-            this.inputValue = "";
+        if (this.confirm === 2) {
             setTimeout(() => {
-                  this.seeTitle = true;
+                this.fiText = true;
             }, 1000);
-            
-      }
-      botText: string = "Bonjour chers clients"
-      carousels: Carousel[] = CAROUSELS;
-      getCarousels(): Carousel[] {
-            return CAROUSELS;
-      }
-      
-      ngOnChanges() {
-            if (this.selectedCategorie) {
-                  
-            }
-      }
+        }
+        if (this.template) {
+            setTimeout(() => {
+                this.seeColor = true;
+            }, 5000);
+        }
+        if (this.template) {
+            setTimeout(() => {
+                this.colored = true
+            }, 6000);
+        }
+        this.inputValue = "";
+        setTimeout(() => {
+            this.seeTitle = true;
+        }, 1000);
 
-      times(){
-            this.time = new Date()
-            return this.time.getHours();
-      }
+    }
+    botText: string = "Bonjour chers clients"
+    carousels: Carousel[] = CAROUSELS;
+    getCarousels(): Carousel[] {
+        return CAROUSELS;
+    }
 
-      minutes(){
-            this.minute = new Date()
-            return this.minute.getMinutes();
-      }
+    ngOnChanges(): void {
+        console.log('change marche');
+
+    }
+
+    times() {
+        let time = new Date()
+        let hours = 0;
+        return hours = time.getHours();
+    }
+
+    minutes() {
+        let minute = new Date();
+        let seconds = 0;
+        seconds = minute.getSeconds();
+        this.time = seconds;
+        return seconds = minute.getSeconds();
+    }
+    hideColor() {
+        this.color = false;
+    }
+    showColor() {
+        this.color = true;
+    }
 
 }

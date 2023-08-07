@@ -215,20 +215,14 @@ ul {
   overflow-y: scroll;
   position: relative;
 }
-
-/* #input{
-  position: fixed;
-  bottom: 10%;
-} */
-
-
-/* Bouton Voir Plus */
-.button1 {
-  background-color: #bf4ef3;
-  color: #fff;
+.position-absolute{
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
 }
-
-/* Bouton Modifier */
-.button2 {
-  margin-block: 1rem;
+input[type=color] {
+  width: 60%;
+  height: 2rem;
+  border: 0;
+  border-radius: 0.2rem;
 }
