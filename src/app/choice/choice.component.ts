@@ -41,15 +41,13 @@ export class ChoiceComponent implements OnInit {
       inputValue: string = "";
       time: any = "";
       minute:any ="";
-
-      heure: any = this.time + this.minute
-
+      // date!: Date 
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
             // this.categories.forEach(el => {
                   //       el.state = false;
                   // })
-                  this.selectedCategorie.state = true;
+            this.selectedCategorie.state = true;
             this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
@@ -76,6 +74,8 @@ export class ChoiceComponent implements OnInit {
                   this.cate = true;
                   this.retard(this.categories)
             }, 2000);
+
+            
       }
       startForm(bool : boolean){
             this.templ.emit(bool);
@@ -112,13 +112,13 @@ export class ChoiceComponent implements OnInit {
       }
 
       times(){
-            this.time = new Date()
+            this.time = new Date
             return this.time.getHours();
       }
 
       minutes(){
-            this.minute = new Date()
+            this.minute = new Date
             return this.minute.getMinutes();
       }
-
+      
 }
