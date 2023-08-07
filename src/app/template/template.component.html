@@ -1,9 +1,13 @@
 <!-- carousel.component.html -->
-<div class="row mt-3 mb-3 px-2">
-
+<h2>choix du template</h2>
+<div class="parent" *ngIf="!patTemp"> <!-- div utiliser pour faire le loading -->
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+<div class="row mt-3 mb-3 px-2" *ngIf="patTemp" >
       <!-- Carousel -->
       <div class="carousel-button col-sm-4">
-            <button class="templateInput" [ngClass]="{'fa fa-check': checked1}" (click)="select1()"></button>
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
                   <!-- Indicators/dots -->
                   <div class="carousel-indicators">
@@ -26,9 +30,9 @@
                         <span class="carousel-control-next-icon"></span>
                   </button>
             </div>
+            <input type="radio" class="radioTemplate templateInput" name="chosedTemplate">
       </div>
       <div class="carousel-button col-sm-4">
-            <button class="templateInput" [ngClass]="{'fa fa-check': checked2}" (click)="select2()"></button>
             <div id="demos" class="carousel slide" data-bs-ride="carousel">
                   <!-- Indicators/dots -->
                   <div class="carousel-indicators">
@@ -51,9 +55,9 @@
                         <span class="carousel-control-next-icon"></span>
                   </button>
             </div>
+            <input type="radio" class="radioTemplate templateInput" name="chosedTemplate">
       </div>
       <div class="carousel-button col-sm-4">
-            <button class="templateInput" [ngClass]="{'fa fa-check': checked3}" (click)="select3()"></button>
             <div id="dem" class="carousel slide" data-bs-ride="carousel">
                   <!-- Indicators/dots -->
                   <div class="carousel-indicators">
@@ -76,22 +80,9 @@
                         <span class="carousel-control-next-icon"></span>
                   </button>
             </div>
+            <input type="radio" class="radioTemplate templateInput" name="chosedTemplate">
       </div>
       
      
 </div>
 
-<div class="row text-center pb-3">
-      <div class="col-sm-4">
-            <label for="favcolor" class="mt-2 mb-2 f-2 fw-3">Select your favorite color primary :</label><br>
-            <input type="color" id="favcolor" value="#ff0000" class="">
-      </div>
-      <div class="col-sm-4">
-            <label for="favcolor" class="mt-2 mb-2">Select your favorite color secondary :</label><br>
-            <input type="color" id="favcolor" value="#0000ff" class="">
-      </div>
-      <div class="col-sm-4">
-            <label for="favcolor" class="mt-2 mb-2">Select your favorite color tertiary :</label><br>
-            <input type="color" id="favcolor" value="#008000" class="">
-      </div>
-</div>

@@ -5,5 +5,6 @@
             <app-template *ngFor="let carousel of carousels" [carousel]="carousel"></app-template>
         </div>
         <app-formulaire></app-formulaire>    
+        <app-choice (templ)="showTemp($event)"  (form)="showform($event)"></app-choice>
     </div>
 </div>

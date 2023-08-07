@@ -1,22 +1,17 @@
 <header class="header" [@fadeInAnimation]>
     <nav [@fadeInAnimation]>
         <ul>
-            <li class="logo"><a href="../header/header.component.html">Create It</a></li>
+            <li class="logo"><a href="../header/header.component.html"><img src="../../assets/img-carousel/logo2 .png" alt="" width="30%"></a></li>
         </ul>
     </nav>
 
     <div class="contenue">
-        <h1 [@fadeInAnimation]><em>Génère ton site Vitrine en un click</em></h1>
-        <p class="texte2" [@fadeInAnimation]>Bienvenue sur notre site vitrine Chatbot ! Notre plateforme innovante vous
-            permet de générer
-            des
-            sites Web sur mesure en quelques étapes simples. Grâce à notre Chatbot intuitif, vous serez guidé
-            tout au long du processus de création. Choisissez parmi une variété de modèles personnalisables.
-            Que vous soyez novice en développement Web ou expert, notre Chatbot convivial vous aidera à créer
-            un site professionnel qui répond à vos besoins spécifiques. Essayez-le dès maintenant et découvrez la
-            simplicité de la conception de sites Web avec notre Chatbot révolutionnaire</p>
-        <div class="button">
-            <a (click)="started(start)" href="#choice">Get Started</a>
+        <div class="mg-left">
+            <h1 [@fadeInAnimation]>Genere ton site Vitrine en un clique</h1>
+            <p class="texte2" [@fadeInAnimation]>{{newSentences}}</p>
+            <div class="button">
+                <a (click)="started(start)" href="#choice">Commencer</a>
+            </div>
         </div>
         <!-- <img src="../../assets/images/4912168.png" alt="" width="100%" height="50vh"> -->
     </div>

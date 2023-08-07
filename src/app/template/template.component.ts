@@ -1,23 +1,27 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { fadeInAnimation } from '../animation.module';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { ServiceService } from '../service.service';
-
 @Component({
       selector: 'app-template',
       templateUrl: './template.component.html',
       styleUrls: ['./template.component.css'],
       animations: [fadeInAnimation]
 })
-export class TemplateComponent {
-      checked1:boolean =  false;
-      checked2:boolean =  false;
-      checked3:boolean =  false;
+export class TemplateComponent implements OnInit{
+      @Input() showColor!: boolean;
+      color: boolean = false;
+      patTemp:boolean =  false;
       constructor(
             private service: ServiceService,
       ) { }
+      ngOnInit(): void {
+            setTimeout(() => {
+                  this.patTemp = true;
+            }, 4000);
+      }
       carousels: Carousel[] = CAROUSELS;
       @Input() carousel!: Carousel;
 
@@ -29,15 +33,6 @@ export class TemplateComponent {
 
       nextSlide(): void {
             this.currentIndex = (this.currentIndex + 1) % this.carousel.images.length;
-      }
-      select1(){
-            this.checked1 = true;
-      }
-      select2(){
-            this.checked2 = true;
-      }
-      select3(){
-            this.checked3 = true;
       }
 
 }

@@ -29,6 +29,6 @@ export class HeaderComponent implements OnInit {
     this.starte.emit(start);
   }
   ngOnInit(): void {
-    this.writter("Bienvenue sur notre site vitrine Chatbot ! Notre plateforme innovante vous permet de générer des sites Web sur mesure en quelques étapes simples. Grâce à notre Chatbot intuitif, vous serez guidé tout au long du processus de création. Choisissez parmi une variété de modèles personnalisables. Que vous soyez novice en développement Web ou expert, notre Chatbot convivial vous aidera à créer un site professionnel qui répond à vos besoins spécifiques. Essayez-le dès maintenant et découvrez la simplicité de la conception de sites Web avec notre Chatbot révolutionnaire")
+    this.writter("Découvrez cette plateforme novatrice! Le site vitrine intègre un Chatbot puissant, vous permettant de générer des sites Web attrayants en quelques clics seulement. Simplifiez votre présence en ligne et donnez vie à vos idées grâce à cette solution intuitive et efficace pour créer des sites uniques.")
   }
 }
