@@ -116,13 +116,15 @@ export class ChoiceComponent implements OnInit {
       }
 
       times(){
-            this.time = new Date()
-            return this.time.getHours();
+            let time = new Date()
+            let hours = 0;
+            return hours = time.getHours();
       }
 
       minutes(){
-            this.minute = new Date()
-            return this.minute.getMinutes();
+            let minute = new Date();
+            let seconds = 0;
+            return seconds = minute.getSeconds();
       }
 
 }

@@ -3,19 +3,25 @@
       <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
       <form (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
             <div class="form-floating mb-3 mt-3">
-                  <input type="text" class="form-control form-control-lg" id="lname" placeholder="Entrer le nom"
-                        name="name" [(ngModel)]="userModel.lastName" required>
+                  <input class="form-control form-control-lg" type="text" name="lastName" id="lastName" #lastName="ngModel" required [(ngModel)]="userModel.lastName">
                   <label for="nom">Nom</label>
+                  <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+                        Votre Nom est réquise
+                  </div>
             </div>
             <div class="form-floating mt-3 mb-3">
-                  <input type="text" class="form-control form-control-lg" id="fname" placeholder="Enter le prenom "
-                        name="surname" [(ngModel)]="userModel.firstName" required>
+                  <input class="form-control form-control-lg" type="text" name="firstName" id="firstName" #firstName="ngModel" required [(ngModel)]="userModel.firstName">
                   <label for="prenom">Prénom</label>
+                  <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
+                        Votre Prénom est réquise
+                  </div>
             </div>
             <div class="form-floating mt-3 mb-3">
-                  <input type="text" class="form-control form-control-lg" id="pwd" placeholder="Enter email"
-                        name="email" [(ngModel)]="userModel.mail" required>
+                  <input class="form-control form-control-lg" type="mail" name="mail" id="mail" #mail="ngModel" required [(ngModel)]="userModel.mail">
                   <label for="email">Email</label>
+                  <!-- <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
+                        Votre Email est réquise
+                  </div> -->
             </div>
 
             <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
