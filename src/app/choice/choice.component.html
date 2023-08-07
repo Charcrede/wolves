@@ -11,7 +11,7 @@
                 <div></div>
             </div>
             <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre site</p>
-            <span class="time-right">11:00</span>
+            <span class="time-right">{{ times() }} : {{ minutes() }} </span>
         </div>
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="bonj">
             <img src="../../assets/images/avatar2.png" alt="Avatar">
@@ -22,7 +22,7 @@
             </div>
             <p *ngIf="bonj && cate">Pour commencer la création de votre site web, veuillez nous dire de quel type
                 de site avez vous besoin</p>
-            <span class="time-right">11:00</span>
+            <span class="time-right">{{ times() }} : {{ minutes() }}</span>
             <div class="categorie" *ngIf="cate">
                 <ul>
                     <li class="btn" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)"
@@ -36,7 +36,7 @@
         <img src="../../assets/images/avatar2.png" alt="Avatar">
         <p class="mb-0">{{selectedCategorie.name}}</p>
         <button class="btn btn-outline-light float-end">modifiez</button>
-        <span class="time-right">11:00</span>
+        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedCategorie">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
@@ -46,7 +46,7 @@
             <div></div>
         </div>
         <p *ngIf="seeTheme">veuillez entrer le theme de votre site web (entrez uniquement le theme)</p>
-        <span class="time-right">11:00</span>
+        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="seeTheme">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
@@ -57,7 +57,7 @@
         </div>
         <p class="mb-0" *ngIf="selectedTheme[0]">{{selectedTheme[0]}}</p>
         <button class="btn btn-outline-light float-end">modifiez</button>
-        <span class="time-right">11:00</span>
+        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
 
 
@@ -87,7 +87,7 @@
         </div>
         <p class="mb-0" *ngIf="selectedTheme[1]">{{selectedTheme[1]}}</p>
         <button class="btn btn-outline-light float-end">modifiez</button>
-        <span class="time-right">11:00</span>
+        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedTheme[1]">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
@@ -97,7 +97,7 @@
             <div></div>
         </div>
         <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
-        <span class="time-right">11:00</span>
+        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template">
         <app-template *ngFor="let carousel of carousels" [carousel]="carousel"></app-template>

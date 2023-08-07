@@ -43,6 +43,11 @@ export class ChoiceComponent implements OnInit {
       themes: Themes[] = THEMES;
       selectedTheme: string[] = [];
       inputValue: string = "";
+      time: any = "";
+      minute:any ="";
+
+      heure: any = this.time + this.minute
+
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
             // this.categories.forEach(el => {
@@ -109,4 +114,15 @@ export class ChoiceComponent implements OnInit {
                   
             }
       }
+
+      times(){
+            this.time = new Date()
+            return this.time.getHours();
+      }
+
+      minutes(){
+            this.minute = new Date()
+            return this.minute.getMinutes();
+      }
+
 }
