@@ -7,12 +7,12 @@ import { FormsModule } from '@angular/forms';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { count } from 'rxjs';
-// if (choice) {
-//       choice.scrollTo(10000,0);
-      
-//       // input.scrollBy({top: 10000000})
-//       // input.scrollIntoView();
-// }
+let input = document.getElementById('input')
+if (input) {
+      // input.scrollt = input.scrollHeight - input.clientHeight
+      // input.scrollBy({top: 10000000})
+      input.scrollIntoView();
+}
 
 @Component({
       selector: 'app-choice',
@@ -21,11 +21,8 @@ import { count } from 'rxjs';
       // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
-  constructor(private service: ServiceService) {
-        let choice = document.getElementById('choice')
-        console.log(choice);
-
-   };
+      realtime: any;
+  constructor(private service: ServiceService) { };
   @Output() form : EventEmitter<boolean> = new EventEmitter();
   @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
@@ -45,14 +42,14 @@ export class ChoiceComponent implements OnInit {
       inputValue: string = "";
       time: any = "";
       minute:any ="";
-      // date!: Date 
+
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
             // this.categories.forEach(el => {
                   //       el.state = false;
                   // })
                   this.selectedCategorie.state = true;
-                  this.selectedCategorie.choose = true;
+            this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
             setTimeout(() => {
@@ -78,8 +75,6 @@ export class ChoiceComponent implements OnInit {
                   this.cate = true;
                   this.retard(this.categories)
             }, 2000);
-
-            
       }
       startForm(bool : boolean){
             this.templ.emit(bool);
@@ -116,15 +111,13 @@ export class ChoiceComponent implements OnInit {
       }
 
       times(){
-            let time = new Date()
-            let hours = 0;
-            return hours = time.getHours();
+            this.time = new Date()
+            this.realtime = this.time.getHours()
+            return this.realtime;
       }
 
       minutes(){
-            let minute = new Date();
-            let seconds = 0;
-            return seconds = minute.getSeconds();
+            this.minute = new Date()
+            return this.minute.getSeconds();
       }
-      
 }
