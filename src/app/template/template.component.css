@@ -118,12 +118,7 @@ div.carousel-item img {
   height: 400px;
 }
 
-input[type=color] {
-  width: 60%;
-  height: 2rem;
-  border: 0;
-  border-radius: 0.2rem;
-}
+
 
 .carousel-button {
   position: relative;
