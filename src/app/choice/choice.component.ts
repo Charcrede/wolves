@@ -21,17 +21,18 @@ import { count } from 'rxjs';
       // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
-  constructor(private service: ServiceService) {
-        let choice = document.getElementById('choice')
-        console.log(choice);
-
-   };
-  @Output() form : EventEmitter<boolean> = new EventEmitter();
-  @Output() templ : EventEmitter<boolean> = new EventEmitter();
+      constructor(private service: ServiceService) {
+            let choice = document.getElementById('choice')
+            console.log(choice);
+            
+      };
+      @Output() form : EventEmitter<boolean> = new EventEmitter();
+      @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
       temp: boolean = true;
       bonj: boolean = false;
       cate: boolean = false;
+      cate2: boolean = false;
       seeTheme : boolean = false;
       seeTitle : boolean = false;
       template : boolean = false;
@@ -80,6 +81,10 @@ export class ChoiceComponent implements OnInit {
                   this.cate = true;
                   this.retard(this.categories)
             }, 2000);
+            setTimeout(() => {
+                  this.cate2 = true;
+                  this.retard(this.categories)
+            }, 3000);
       }
       startForm(bool : boolean){
             this.templ.emit(bool);

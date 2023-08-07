@@ -10,10 +10,10 @@
                 <div></div>
                 <div></div>
             </div>
-            <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre site</p>
+            <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre plateforme</p>
             <span class="time-right">{{ times() }} : {{ minutes() }} </span>
         </div>
-        <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="bonj">
+        <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8 mx-width" *ngIf="bonj">
             <img src="../../assets/images/avatar2.png" alt="Avatar">
             <div class="parent" *ngIf="bonj && !cate"> <!-- div utiliser pour faire le loading -->
                 <div></div>
@@ -23,19 +23,28 @@
             <p *ngIf="bonj && cate">Pour commencer la création de votre site web, veuillez nous dire de quel type
                 de site avez vous besoin</p>
             <span class="time-right">{{ times() }} : {{ minutes() }}</span>
+        </div>
+        <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="bonj && cate">
+            <img src="../../assets/images/avatar2.png" alt="Avatar">
+            <div class="parent" *ngIf="bonj && !cate "> <!-- div utiliser pour faire le loading -->
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <div class="categorie" *ngIf="cate">
                 <ul>
                     <li class="btn" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)"
                             *ngIf="categorie.state">{{categorie.name}}</a></li>
+                    <button class="btn button1">...voir plus</button>
                 </ul>
-                <button class="btn btn-outline-dark float-end">voir plus</button>
             </div>
+            <span class="time-right">{{ times() }} : {{ minutes() }}</span>
         </div>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedCategorie">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
         <p class="mb-0">{{selectedCategorie.name}}</p>
-        <button class="btn btn-outline-light float-end">modifiez</button>
+        <button class="btn btn-outline-light button2">Modifier</button>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedCategorie">
@@ -48,15 +57,10 @@
         <p *ngIf="seeTheme">veuillez entrer le theme de votre site web (entrez uniquement le theme)</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
-    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="seeTheme">
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0]">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
-        <div class="parent" *ngIf="!selectedTheme[0]">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <p class="mb-0" *ngIf="selectedTheme[0]">{{selectedTheme[0]}}</p>
-        <button class="btn btn-outline-light float-end">modifiez</button>
+        <p class="mb-0">{{selectedTheme[0]}}</p>
+        <button class="btn btn-outline-light ">modifiez</button>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
 
@@ -78,14 +82,9 @@
                     </ul>
                 </div> -->
     </div>
-    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0]">
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0] && selectedTheme[1]">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
-        <div class="parent" *ngIf="seeTitle && !selectedTheme[1]">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <p class="mb-0" *ngIf="selectedTheme[1]">{{selectedTheme[1]}}</p>
+        <p class="mb-0">{{selectedTheme[1]}}</p>
         <button class="btn btn-outline-light float-end">modifiez</button>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
@@ -96,7 +95,9 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
+        <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}},
+            et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques
+            exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template">
@@ -106,8 +107,8 @@
         <div class="position-relative"><input type="text" placeholder="Entrer votre texte "
                 class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
                 class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
-                {{inputValue}}
-            </form>
+        {{inputValue}}
+    </form>
 </div>
 <script>
     let choice = document.getElementById('choice');
