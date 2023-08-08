@@ -62,6 +62,7 @@ export class ChoiceComponent implements OnInit {
       inputValue: string = "";
       time: any = "";
       minute:any ="";
+      paddleOfColor: string[] = [];
 
     heure: any = this.time + this.minute
 
@@ -100,8 +101,24 @@ export class ChoiceComponent implements OnInit {
                   this.retard(this.categories)
             }, 3000);
       }
-      startForm(bool : boolean){
+      startForm(bool : boolean,){
             this.templ.emit(bool);
+            this.colorPaddle();
+
+      }
+      @ViewChild ('input1') primary!: ElementRef;
+      @ViewChild ('input2') secondary!: ElementRef;
+      @ViewChild ('input3') tertiary!: ElementRef;
+      colorPaddle(){
+        let input1 = this.primary.nativeElement;                
+        let input2 = this.secondary.nativeElement;            
+        let input3 = this.tertiary.nativeElement;
+        this.paddleOfColor.push(input1.value)                
+        this.paddleOfColor.push(input2.value)                
+        this.paddleOfColor.push(input3.value)  
+        console.log(this.paddleOfColor);
+        return this.paddleOfColor;
+                      
       }
       themer(){
             this.selectedTheme[this.confirm] = this.inputValue;
@@ -131,10 +148,7 @@ export class ChoiceComponent implements OnInit {
 
     }
     botText: string = "Bonjour chers clients"
-    carousels: Carousel[] = CAROUSELS;
-    getCarousels(): Carousel[] {
-        return CAROUSELS;
-    }
+    
     times() {
         let time = new Date()
         let hours = 0;
@@ -153,6 +167,8 @@ export class ChoiceComponent implements OnInit {
     }
     showColor() {
         this.color = true;
+        
+        
     }
     modifierTheme(u: number){
         this.inputValue = this.selectedTheme[u];
