@@ -132,7 +132,7 @@
         </div>
         <a href="#formulaire" class="btn float-end colorB" (click)="startForm(temp)">Terminer</a>
   </div>
-    <form (ngSumit)="themer()" id="input" class="inputDiscussion">
+    <form (ngSumit)="themer()" id="input" class="inputDiscussion position-relative">
         <div><input type="text" placeholder="Entrer votre texte "
                 class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
                 class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
