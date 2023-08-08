@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { count } from 'rxjs';
+import { DatePipe } from '@angular/common';
 // if (choice) {
 //       choice.scrollTo(10000,0);
       
@@ -21,7 +22,7 @@ import { count } from 'rxjs';
       // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
-  constructor(private service: ServiceService) {
+  constructor(private service: ServiceService, private datePipe: DatePipe) {
         let choice = document.getElementById('choice')
         console.log(choice);
 
@@ -46,15 +47,16 @@ export class ChoiceComponent implements OnInit {
       time: any = "";
       minute:any ="";
 
-      heure: any = this.time + this.minute
+      messages: Array<{ time: Date }> = [];
+      
 
       onSelect(categorie: Categorie) {
             this.selectedCategorie = categorie;
             // this.categories.forEach(el => {
                   //       el.state = false;
                   // })
-                  this.selectedCategorie.state = true;
-                  this.selectedCategorie.choose = true;
+            this.selectedCategorie.state = true;
+            this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
             setTimeout(() => {
@@ -115,16 +117,23 @@ export class ChoiceComponent implements OnInit {
             }
       }
 
-      times(){
-            let time = new Date()
-            let hours = 0;
-            return hours = time.getHours();
-      }
+    //   times(){
+    //         let time = new Date()
+    //         let hours = 0;
+    //         return hours = time.getHours();
+    //   }
 
-      minutes(){
-            let minute = new Date();
-            let seconds = 0;
-            return seconds = minute.getSeconds();
+    //   minutes(){
+    //         let minute = new Date();
+    //         let seconds = 0;
+    //         return seconds = minute.getSeconds();
+    //   }
+
+    sendMessage() {
+        // ...
+        const currentTime = new Date();
+        this.messages.push({ time: currentTime });
+        // ...
       }
 
 }
