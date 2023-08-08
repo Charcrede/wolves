@@ -5,22 +5,19 @@
     background-repeat: no-repeat;
     height: 100vh;
     max-width: 100%;
-    padding-block: 0.5rem;
+    /* padding-top: 0.5rem; */
     color: white;
-}
-
-.logo {
-    font-size: 3rem;
 }
 
 .header ul {
     display: flex;
     align-items: center;
     list-style: none;
-    justify-content: space-between;
+    justify-content: start;
     color: #fff;
     margin-block: 0px;
     padding-block: 0.5rem;
+    margin-left: 0;
     padding-inline: 1rem;
     gap: 1rem;
 
@@ -28,8 +25,8 @@
 }
 
 .contenue {
+    background-image: url("../../assets/images/bg-flow.png");
     margin: 1rem;
-    margin-top: 5rem;
     margin-left: 5rem;
 }
 
@@ -42,13 +39,19 @@
     color: #010028;
 }
 
-.header h1 {
-    margin-top: 6rem;
-    margin-bottom: 2rem;
+.contenue h1 {
+    margin-bottom: 3rem;
+    margin-top: 8rem;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: Tanker;
+    width: 50%;
+    text-transform: uppercase;
 }
 
+.block{
+    margin-left: 5rem;
+}
 .header h2,
 .header h2 p {
     font-weight: lighter;
@@ -56,9 +59,10 @@
 }
 
 .texte2 {
-    width: 75%;
-    font-size: 1.6rem;
-    font-family: 'Poppins';
+    width: 60%;
+    font-size: 1.5rem;
+    color: #bd7cd7;
+    font-family: Poppins;
 }
 
 .header .menu1 {
@@ -70,25 +74,39 @@
     font-weight: bold;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo a {
     text-decoration: none;
     color: #8f14c0;
     font-family: "Audiowide", sans-serif;
+    font-size: 3rem;
+}
+
+.logo img {
+    width: 30%;
 }
 
 .button {
-    font-size: 1.7rem;
-    font-weight: bold;
-    margin-block: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-block: 3rem;
 }
 
 .button a {
-    background-color: #fff;
-    color: #200554;
-    border: 2px solid white;
+    background-image: linear-gradient(to right, #53048c, #04589d);
+    color: #c0afda;
+    font-size: 1.5em;
+    /* border: 0.1rem solid white; */
     padding: 0.5rem 1.5rem;
-    border-radius: 2.2rem;
-    transition: all .5s;
+    border-radius: 2rem;
+    transition: all 2s;
     text-decoration: none;
 }
 
@@ -96,5 +114,74 @@
 .button a:hover {
     background-color: #200554;
     color: #fff;
-    box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000
+    box-shadow: 0 4px 8px 0 #00000042;
+    transform: scale(1.1);
+    opacity: 0.8;
 }
+
+
+
+/********** Petit desktop *********/
+@media screen and (max-width: 1200px) {
+
+    .texte2 {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .contenue h1 {
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+        text-transform: uppercase;
+    }
+}
+
+
+/********** Tablette *********/
+@media screen and (max-width: 980px) {
+
+    .block{
+        margin: 1rem;
+        margin-left: 1rem;
+    }
+
+    .contenue {
+        margin: 0;
+        margin-left: 0;
+    }
+
+    .texte2 {
+        text-align: center;
+    }
+
+    .contenue h1 {
+        font-size: 3rem;
+    }
+
+
+}
+
+/********** Mobile *********/
+@media screen and (max-width: 530px) {
+
+    .block{
+        margin: 1rem;
+    }
+
+    .contenue {
+        margin: 0;
+        margin-left: 0;
+    }
+    
+    .contenue h1 {
+        font-size: 2.5rem;
+    }
+
+    .texte2 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+}
+

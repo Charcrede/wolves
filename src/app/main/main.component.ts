@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
@@ -11,14 +11,19 @@ import { fadeInAnimation } from '../animation.module';
   styleUrls: ['./main.component.css'],
   animations: [fadeInAnimation]
 })
-export class MainComponent {
-
-  botText: string = "Bonjour chers clients"
-  carousels: Carousel[] = CAROUSELS;
+export class MainComponent implements OnInit{
+  @Input() getStarted!: boolean;
+  template: boolean = false;
+  formulaire: boolean = false;
   constructor(private service : ServiceService){}
-
-  getCarousels(): Carousel[] {
-    return CAROUSELS;
+  ngOnInit(): void {
+    window.scroll(10000, 0)
   }
-
+ 
+  showTemp($event: any){
+    this.template = $event;
+  }
+  showform($event: any){
+    this.formulaire = true;
+  }
 }
