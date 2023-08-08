@@ -21,7 +21,7 @@
                 <div></div>
             </div>
             <p *ngIf="bonj && cate">Pour commencer la création de votre site web, veuillez nous dire de quel type
-                de site avez vous besoin</p>
+                de site avez vous besoin.</p>
             <span class="time-right">{{ times() }} : {{ minutes() }}</span>
         </div>
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8 mx-width" *ngIf="bonj">
@@ -44,7 +44,7 @@
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedCategorie">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
         <p class="mb-0">{{selectedCategorie.name}}</p>
-        <button class="btn btn-outline-light float-end">modifiez</button>
+        <button class="btn btn-outline-light float-end">Modifiez</button>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedCategorie">
@@ -54,7 +54,7 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="seeTheme">veuillez entrer le theme de votre site web (entrez uniquement le theme)</p>
+        <p *ngIf="seeTheme">Veuillez entrer le theme de votre site web (entrez uniquement le theme)</p>
         <span class="time-right"></span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0]">
@@ -100,7 +100,7 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
+        <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entrez le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes, appuyez sur entrer pour voir quelques exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template" id="template">
@@ -113,24 +113,27 @@
             <div></div>
             <div></div>
         </div>
-        <p class="mb-0" *ngIf="colored"> Voulez vous modifiez les couleurs du template ? </p>
+        <p class="mb-0" *ngIf="colored"> Voulez vous modifier les couleurs du template ? </p>
         <a type="button" href="#color" class="btn btn-outline-dark float-end" (click)="showColor()">Oui</a>
         <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Ignorer</a>
         <span class="time-right"></span>
     </div>
+
+
+
     <div class="row text-center pb-3" *ngIf="color">
         <h3 class="title3">CHOIX DE COULEURS</h3>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Primaire :</label><br>
-              <input type="color" id="favcolor" value="#fcd7f9" class="">
+              <input type="color" id="favcolor" value="#fcd7f9" class="" #input1>
         </div>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Secondaire:</label><br>
-              <input type="color" id="favcolor" value="#c738ba" class="">
+              <input type="color" id="favcolor" value="#c738ba" class="" #input2>
         </div>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Tertiaire:</label><br>
-              <input type="color" id="favcolor" value="#840378" class="">
+              <input type="color" id="favcolor" value="#840378" class="" #input3>
         </div>
         <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Terminer</a>
   </div>
