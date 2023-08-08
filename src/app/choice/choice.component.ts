@@ -128,10 +128,7 @@ export class ChoiceComponent implements OnInit {
 
     }
     botText: string = "Bonjour chers clients"
-    carousels: Carousel[] = CAROUSELS;
-    getCarousels(): Carousel[] {
-        return CAROUSELS;
-    }
+    
     times() {
         let time = new Date()
         let hours = 0;

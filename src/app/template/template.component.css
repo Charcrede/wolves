@@ -211,6 +211,6 @@ div.carousel-item img {
 }
 
 .carousel:hover>div {
-  transform: scale(1.2);
+  transform: scale(1.05);
   border-radius: 0.2rem;
 }

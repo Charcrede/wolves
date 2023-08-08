@@ -23,17 +23,7 @@ export class TemplateComponent implements OnInit{
             }, 4000);
       }
       carousels: Carousel[] = CAROUSELS;
-      @Input() carousel!: Carousel;
-
-      currentIndex = 0;
-
-      previousSlide(): void {
-            this.currentIndex = (this.currentIndex - 1 + this.carousel.images.length) % this.carousel.images.length;
-      }
-
-      nextSlide(): void {
-            this.currentIndex = (this.currentIndex + 1) % this.carousel.images.length;
-      }
-
-
+      getCarousels(): Carousel[] {
+            return CAROUSELS;
+        }
 }
