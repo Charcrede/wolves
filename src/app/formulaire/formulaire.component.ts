@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild,OnInit, OnChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { fadeInAnimation } from '../animation.module'
 import { userInfos } from '../user.Info';
@@ -8,11 +8,24 @@ import { userInfos } from '../user.Info';
       styleUrls: ['./formulaire.component.css'],
       animations: [fadeInAnimation]
 })
-export class FormulaireComponent {
+export class FormulaireComponent implements OnInit, OnChanges {
 
       userModel = new userInfos('King', 'TCHALLA','king@wakanda');
 
       submitted = false;
+
+      FirstName!:string | null;
+      LastName!: string | null;
+      Email!: string | null;
+
+      ngOnInit():void {
+            if(localStorage){
+                  console.log(`Les information de l'utilisateur sont:
+                  Nom: ${this.LastName}
+                  Prenom: ${this.FirstName}
+                  Email: ${this.Email}`);
+            }
+      }
 
       onSubmit(){
             this.submitted = true;                        
@@ -20,8 +33,32 @@ export class FormulaireComponent {
 
       newUser(){
             this.userModel = new userInfos(`${this.userModel.firstName}`, `${this.userModel.lastName}`, `${this.userModel.mail}`);
+            
+            localStorage.setItem('prenon', this.userModel.firstName);
+            this.FirstName = localStorage.getItem('prenon');
+            localStorage.setItem('nom', this.userModel.lastName);
+            this.LastName = localStorage.getItem('nom');
+            localStorage.setItem('email', this.userModel.mail);
+            this.Email = localStorage.getItem('email');
+                      
+
             console.log(this.userModel);
       }
+
+      ngOnChanges():void{
+            if(localStorage === null || localStorage === undefined){
+                  console.log("Donnée vide");                  
+            } else {
+                  console.log(`Les information de l'utilisateur sont:
+            Nom: ${this.LastName}
+            Prenom: ${this.FirstName}
+            Email: ${this.Email}`);
+            }
+            
+      }
+
+     
+
 
 
       // name!: string;
