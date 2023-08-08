@@ -3,6 +3,7 @@ import { ServiceService } from '../service.service';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { fadeInAnimation } from '../animation.module';
+import { userInfos } from '../user.Info';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { fadeInAnimation } from '../animation.module';
 })
 export class MainComponent implements OnInit{
   @Input() getStarted!: boolean;
+  user!: userInfos;
   template: boolean = false;
   formulaire: boolean = false;
   constructor(private service : ServiceService){}
@@ -25,5 +27,9 @@ export class MainComponent implements OnInit{
   }
   showform($event: any){
     this.formulaire = true;
+  }
+  showUserInfos($event: userInfos){
+    this.user = $event
+    console.log(this.user);    
   }
 }
