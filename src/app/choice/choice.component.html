@@ -92,10 +92,10 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="fiText">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
+        <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
-    <div *ngIf="template">
+    <div *ngIf="template" id="template">
         <app-template *ngFor="let carousel of carousels" [carousel]="carousel" [showColor]="color"></app-template>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="seeColor">
@@ -106,11 +106,11 @@
             <div></div>
         </div>
         <p class="mb-0" *ngIf="colored"> Voulez vous modifiez les couleurs du template ? </p>
-        <button class="btn btn-outline-dark float-end" (click)="showColor()">Oui</button>
-        <button class="btn btn-outline-dark float-end" (click)="hideColor()">Ignorer</button>
+        <a type="button" href="#color" class="btn btn-outline-dark float-end" (click)="showColor()">Oui</a>
+        <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Ignorer</a>
         <span class="time-right"></span>
     </div>
-    <div class="row text-center pb-3" *ngIf="color">
+    <div class="row text-center pb-3" *ngIf="color" id="color">
         <h3>CHOIX DE COULEURS</h3>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 f-2 fw-3">Select your favorite color primary :</label><br>
@@ -124,14 +124,13 @@
               <label for="favcolor" class="mt-2 mb-2">Select your favorite color tertiary :</label><br>
               <input type="color" id="favcolor" value="#008000" class="">
         </div>
-        <button class="btn btn-outline-dark" (click)="startForm(temp)"> Terminer</button>
+        <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Terminer</a>
   </div>
-    <form (ngSumit)="themer()" id="input" class="position-absolute">
+    <form (ngSumit)="themer()" id="input" class="inputDiscussion">
         <div><input type="text" placeholder="Entrer votre texte "
                 class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
                 class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
-                {{inputValue}}
-            </form>
+    </form>
 </div>
 <script>
     let choice = document.getElementById('choice');

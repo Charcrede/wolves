@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { fadeInAnimation } from '../animation.module'
 import { userInfos } from '../user.Info';
@@ -45,6 +45,16 @@ export class FormulaireComponent {
       //             // Effectuez des actions, telles que l'envoi des données au serveur.
       //       }
       // }
-
+      @ViewChild ('formulaire') formulaire !: ElementRef;
+      ngAfterViewInit():void{
+          this.scrollToBottom();
+        }
+        scrollToBottom(){
+          const container = this.formulaire.nativeElement;
+          container.scrollTop = container.scrollHeight;
+          console.log(container);
+          
+        }
 
 }
+

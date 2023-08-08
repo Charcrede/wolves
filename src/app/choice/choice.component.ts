@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnChanges, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnChanges, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 // import { fadeInAnimation } from '../animation.module';
 import { Categorie, SousThemes, Themes } from '../categorie';
 import { CATEGORIES, THEMES } from '../mock.categorie';
@@ -21,12 +21,20 @@ import { count } from 'rxjs';
     // animations: [fadeInAnimation]
 })
 export class ChoiceComponent implements OnInit {
-      
-      constructor(private service: ServiceService) {
-            let choice = document.getElementById('choice')
-            console.log(choice);
-            
-      };
+    constructor(
+        private service: ServiceService,
+        private renderer: Renderer2
+        ) {};
+    @ViewChild('choice') choice !: ElementRef;
+    ngAfterViewInit():void{
+        this.scrollToBottom();
+      }
+      scrollToBottom(){
+        const container = this.choice.nativeElement;
+        container.scrollTop = container.scrollHeight;
+        console.log(container);
+        
+      }
       @Output() form : EventEmitter<boolean> = new EventEmitter();
       @Output() templ : EventEmitter<boolean> = new EventEmitter();
       index: number = 0;
@@ -72,7 +80,6 @@ export class ChoiceComponent implements OnInit {
             setInterval(() => {
                   if (i < array.length) {
                         array[i].state = true;
-                        console.log(array[i]);
                         i++
                   }
             }, 100);
@@ -96,9 +103,7 @@ export class ChoiceComponent implements OnInit {
       themer(){
             this.selectedTheme.push(this.inputValue);
             this.confirm++;
-            console.log(this.confirm);
-            
-            if (this.confirm === 3 && this.fiText) {
+            if (this.confirm >= 3 && this.fiText) {
                   this.template = true;
             }
         if (this.confirm === 2) {
@@ -127,12 +132,6 @@ export class ChoiceComponent implements OnInit {
     getCarousels(): Carousel[] {
         return CAROUSELS;
     }
-
-    ngOnChanges(): void {
-        console.log('change marche');
-
-    }
-
     times() {
         let time = new Date()
         let hours = 0;
