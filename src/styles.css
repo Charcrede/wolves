@@ -1,28 +1,5 @@
 @import url(fonts.css);
 /* You can add global styles to this file, and also import other style files */
-:root{
-    --color-primay : #840378;
-    --color-secondary : #840378;
-    --color-tertiary : #840378;
-}
-
-body {
+body{
     margin: 0;
-    background-color: #ede9f1 ;
-}
-
-h1,
-h2,
-h3{
-    font-family: Tanker;
-}
-
-h2,
-h3,
-h4{
-    width: 100%;
-    border: #6d2eac solid 0.1rem;
-    color: var(--color-primay);
-    border-radius: 0.1rem 0.1rem 0 0;
-    text-align: center;
 }
