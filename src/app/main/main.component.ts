@@ -23,4 +23,7 @@ export class MainComponent implements OnInit{
   showTemp($event: any){
     this.template = $event;
   }
+  showform($event: any){
+    this.formulaire = true;
+  }
 }
