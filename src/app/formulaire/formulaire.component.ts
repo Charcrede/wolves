@@ -21,8 +21,18 @@ export class FormulaireComponent implements OnInit {
      localInfo: string | null = null;
      submitted = false;
 
+
+      FirstName!:string | null;
+      LastName!: string | null;
+      Email!: string | null;
+
       ngOnInit():void {
-            console.log(this.getUserInfo());
+            if(localStorage){
+                  console.log(`Les information de l'utilisateur sont:
+                  Nom: ${this.LastName}
+                  Prenom: ${this.FirstName}
+                  Email: ${this.Email}`);
+            }
       }
 
       onSubmit(){
@@ -43,5 +53,21 @@ export class FormulaireComponent implements OnInit {
             return this.localInfo = this.getUserInfo()
       }
 
+      ngOnChanges():void{
+            if(localStorage === null || localStorage === undefined){
+                  console.log("Donnée vide");                  
+            } else {
+                  console.log(`Les information de l'utilisateur sont:
+            Nom: ${this.LastName}
+            Prenom: ${this.FirstName}
+            Email: ${this.Email}`);
+            }
+            
+      }
+
+     
+
+
 
 }
+
