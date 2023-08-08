@@ -1,8 +1,14 @@
+.contain{
+    /* max-width: 1300px; */
+    margin: 0 auto;
+    width: 90%;
+}
 .chat{
     margin: 2rem;
     /* padding: 1rem; */
     border-radius: 1rem;
 }
+
 .b-shadow{
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
