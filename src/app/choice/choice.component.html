@@ -4,7 +4,7 @@
     </div>
     <div class="dialogue">
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6">
-            <img src="../../assets/images/avatar2.png" alt="Avatar">
+            <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
             <div class="parent" *ngIf="!bonj"> <!-- div utiliser pour faire le loading -->
                 <div></div>
                 <div></div>
@@ -13,7 +13,7 @@
             <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre site</p>
         </div>
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8 mx-width" *ngIf="bonj">
-            <img src="../../assets/images/avatar2.png" alt="Avatar">
+            <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
             <div class="parent" *ngIf="bonj && !cate"> <!-- div utiliser pour faire le loading -->
                 <div></div>
                 <div></div>
@@ -23,7 +23,7 @@
                 de site avez vous besoin</p>
         </div>
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8 mx-width" *ngIf="cate">
-            <img src="../../assets/images/avatar2.png" alt="Avatar">
+            <img src="../../assets/images/robot.png" width="5px" alt="Avatar">
             <div class="parent" *ngIf="!cate2"> <!-- div utiliser pour faire le loading -->
                 <div></div>
                 <div></div>
@@ -40,12 +40,11 @@
         </div>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedCategorie">
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <p class="mb-0">{{selectedCategorie.name}}</p>
-        <button class="btn btn-outline-light float-end">modifiez</button>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedCategorie">
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <div class="parent" *ngIf="!seeTheme"> <!-- div utiliser pour faire le loading -->
             <div></div>
             <div></div>
@@ -55,21 +54,21 @@
         <span class="time-right"></span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0]">
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <div class="parent" *ngIf="!selectedTheme[0]">
             <div></div>
             <div></div>
             <div></div>
         </div>
         <p class="mb-0" *ngIf="selectedTheme[0]" #theme>{{selectedTheme[0]}}</p>
-        <a  type="button" href="#input" class="btn btn-outline-light float-end" (click)="modifierTheme(0)">modifiez</a>
+        <a  type="button" href="#input" class="btn btn-outline-light float-end" (click)="modifierTheme(0)">Modifier</a>
     </div>
 
 
     <!-- <p class="bulb bulb-head b-shadow" *ngIf="selectedCategorie">Vous avez choisi la catégorie : {{selectedCategorie}},
                 si ce n'est pas celui que vous vouliez vous pouvez la modifiez en recliquant sur la selection</p> -->
     <div *ngIf="selectedTheme[0]" class="container b-shadow mt-2 ms-3 mb-3 col-sm-8">
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <div class="parent" *ngIf="!seeTitle">
             <div></div>
             <div></div>
@@ -84,13 +83,13 @@
                 </div> -->
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[1]" #titre>
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <p class="mb-0">{{selectedTheme[1]}}</p>
-        <a type="button" href="#input" class="btn btn-outline-light float-end" (click)="modifierTheme(1)">modifiez</a>
+        <a type="button" href="#input" class="btn btn-outline-light float-end" (click)="modifierTheme(1)">Modifier</a>
         <span class="time-right"></span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedTheme[1]">
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <div class="parent" *ngIf="!fiText"> <!-- div utiliser pour faire le loading -->
             <div></div>
             <div></div>
@@ -103,7 +102,7 @@
         <app-template [showColor]="color"></app-template>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="seeColor">
-        <img src="../../assets/images/avatar2.png" alt="Avatar">
+        <img src="../../assets/images/robot.png" width="10px" alt="Avatar">
         <div class="parent" *ngIf="!colored">
             <div></div>
             <div></div>
@@ -134,8 +133,10 @@
   </div>
     <form (ngSumit)="themer()" id="input" class="inputDiscussion position-relative">
         <div><input type="text" placeholder="Entrer votre texte "
-                class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
-                class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
+                class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue" id="input" [disabled]="able"> <a
+                type="button"
+                href="#input"
+                class="btn buttonChat fas fa-paper-plane" (click)="themer()"></a></div>
     </form>
 </div>
 <script>

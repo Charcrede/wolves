@@ -62,6 +62,7 @@ export class ChoiceComponent implements OnInit {
       inputValue: string = "";
       time: any = "";
       minute:any ="";
+      able: boolean = true;
       paddleOfColor: string[] = [];
 
     heure: any = this.time + this.minute
@@ -79,6 +80,7 @@ export class ChoiceComponent implements OnInit {
                   this.seeTheme = true;
                   // this.retard(this.categories)
             }, 1000);
+            this.able = false;
       }
       retard(array: SousThemes[] | Categorie[]) {
             let i = 0
