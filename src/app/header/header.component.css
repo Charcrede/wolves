@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     background-image: url("../../assets/images/bg2.jpg");
     /* background-position: center; */
     background-size: cover;
@@ -27,12 +28,8 @@
 }
 
 .contenue {
+    margin-left: 10%;
     margin: 1rem;
-    /* text-align: center; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     margin-top: 5rem;
 }
 
@@ -45,12 +42,18 @@
     color: #010028;
 }
 
-.header h1 {
+.contenue h1 {
     margin-bottom: 3rem;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: Tanker;
+    width: 50%;
+    padding-left: 1.5rem;
+    text-transform: uppercase;
 }
-
+.mg-left{
+    margin-left: 5rem;
+}
 .header h2,
 .header h2 p {
     font-weight: lighter;
@@ -64,7 +67,9 @@
 
 .texte2 {
     width: 60%;
-    font-size: 1rem;
+    font-size: 1.7rem;
+    color: #bd7cd7;
+    font-family: Poppins;
 }
 
 .header .menu1 {
@@ -82,18 +87,20 @@
 }
 
 .button {
+    position: absolute;
+    bottom: 5%;
     margin: 3rem;
     font-size: 1.1rem;
 }
 
 .button a {
-    background-color: #fff;
-    color: #010028;
-    border: 0.2rem solid white;
+    background-image: linear-gradient(to right, #53048c, #04589d);
+    color: #c0afda;
+    font-size: 1.5em;
+    /* border: 0.1rem solid white; */
     padding: 0.5rem 1.5rem;
-    border-radius: 2.2rem;
+    border-radius: 2rem;
     transition: all 2s;
-    /* border-radius: 25px; */
     text-decoration: none;
 }
 
@@ -101,6 +108,8 @@
 .button a:hover{
     background-color: #010028;
     color: #fff;
-    box-shadow: 0 4px 8px 0 #000000, 0 6px 20px 0 #000000
+    box-shadow: 0 4px 8px 0 #00000042;
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 

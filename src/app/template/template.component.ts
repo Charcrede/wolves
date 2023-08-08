@@ -1,5 +1,5 @@
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { fadeInAnimation } from '../animation.module';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
@@ -11,9 +11,8 @@ import { ServiceService } from '../service.service';
       animations: [fadeInAnimation]
 })
 export class TemplateComponent implements OnInit{
-      checked1:boolean =  false;
-      checked2:boolean =  false;
-      checked3:boolean =  false;
+      @Input() showColor!: boolean;
+      color: boolean = false;
       patTemp:boolean =  false;
       constructor(
             private service: ServiceService,
@@ -34,15 +33,6 @@ export class TemplateComponent implements OnInit{
 
       nextSlide(): void {
             this.currentIndex = (this.currentIndex + 1) % this.carousel.images.length;
-      }
-      select1(){
-            this.checked1 = true;
-      }
-      select2(){
-            this.checked2 = true;
-      }
-      select3(){
-            this.checked3 = true;
       }
 
 }

@@ -19,10 +19,12 @@ export const CAROUSELS: Carousel[] = [
             id: 1,
             name: 'Carousel 1',
             images: [
-                  { id: 1, imageUrl: '../assets/img-carousel/carousel1.jpg' },
-                  { id: 2, imageUrl: '../assets/img-carousel/carousel2.jpg' },
-                  { id: 3, imageUrl: '../assets/img-carousel/carousel3.jpg' },
+                  { id: 1, imageUrl: '../assets/img-carousel/template1.jpg' },
+                  { id: 2, imageUrl: '../assets/img-carousel/template2.jpg' },
+                  { id: 3, imageUrl: '../assets/img-carousel/template3.jpg' },
             ],
       },
+      
+      
      
 ];
