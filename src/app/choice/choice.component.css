@@ -215,7 +215,7 @@ ul {
   }
 }
 
-.wraper {
+/* .wraper {
   height: 90vh;
   overflow-y: scroll;
   position: relative;
@@ -224,14 +224,13 @@ ul {
   bottom: 10px;
   right: 10px;
   left: 10px;
-}
+} */
 input[type=color] {
   width: 60%;
   height: 2rem;
   border: 0;
   border-radius: 0.2rem;
 }
-
-@media screen  {
-  
+.inputDiscussion{
+  margin-block:1rem ;
 }
