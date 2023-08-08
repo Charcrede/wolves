@@ -242,7 +242,7 @@ input[type=color] {
 }
 
 /********** Petit desktop *********/
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (min-width: 980px){
 
   .texte2 {
       width: 100%;
@@ -250,30 +250,19 @@ input[type=color] {
   }
 
   .contenue p {
-      font-size: 1.2rem;
+      font-size: 0.8rem;
   }
 }
 
 
 /********** Tablette *********/
-@media screen and (max-width: 980px) {
-
-  .block{
-      margin: 1rem;
-      margin-left: 1rem;
+@media screen and (max-width: 981px)  and (min-width: 531px){
+  .container{
+    font-size: 0.9rem;
+    max-width: 70%;
   }
-
-  .contenue {
-      margin: 0;
-      margin-left: 0;
-  }
-
-  .texte2 {
-      text-align: center;
-  }
-
-  .contenue h1 {
-      font-size: 3rem;
+  .usersEnter{
+    width: 50%;
   }
 
 
@@ -282,22 +271,16 @@ input[type=color] {
 /********** Mobile *********/
 @media screen and (max-width: 530px) {
 
-  .block{
-      margin: 1rem;
+  .container{
+    font-size: 0.9rem;
+    max-width: 70%;
+    margin-left: 0;
   }
-
-  .contenue {
-      margin: 0;
-      margin-left: 0;
+  .container img{
+    width: 15px;
   }
-  
-  .contenue h1 {
-      font-size: 2.5rem;
-  }
-
-  .texte2 {
-      text-align: center;
-      font-size: 1.2rem;
+  .usersEnter{
+    width: 50%;
   }
 
 }
