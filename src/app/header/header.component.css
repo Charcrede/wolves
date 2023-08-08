@@ -34,15 +34,6 @@
     background-image: url("../../assets/images/bg-flow.png");
 }
 
-.menu1 li a {
-    padding: .5rem;
-}
-
-.menu1 li a:hover {
-    background-color: #ffffff;
-    color: #010028;
-}
-
 .contenue h1 {
     margin-bottom: 3rem;
     margin-top: 8rem;
@@ -55,9 +46,11 @@
     padding-left: 1.5rem;
     text-transform: uppercase;
 }
-.mg-left{
+
+.block{
     margin-left: 5rem;
 }
+
 .header h2,
 .header h2 p {
     font-weight: lighter;
@@ -158,7 +151,7 @@ p {
 
     .contenue {
         margin: 0;
-        margin-left: 0;
+        padding-left: 0;
     }
 
     .texte2 {
@@ -181,16 +174,25 @@ p {
 
     .contenue {
         margin: 0;
-        margin-left: 0;
+        padding-left: 0;
     }
     
     .contenue h1 {
         font-size: 2.5rem;
+        margin-top: 3rem;
     }
 
     .texte2 {
         text-align: center;
         font-size: 1.2rem;
+    }
+
+    .header ul {
+        text-align: center;
+    }
+    
+    .header ul img{
+        width: 50%;
     }
 
 }
