@@ -92,6 +92,5 @@ export class FormulaireComponent implements OnInit, OnChanges {
           console.log(container);
           
         }
-
 }
 
