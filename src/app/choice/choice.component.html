@@ -103,7 +103,7 @@
         <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
-    <div *ngIf="template" id="template">
+    <div  id="template">
         <app-template *ngFor="let carousel of carousels" [carousel]="carousel" [showColor]="color"></app-template>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="seeColor">
@@ -122,7 +122,7 @@
         <h3 class="title3">CHOIX DE COULEURS</h3>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Primaire :</label><br>
-              <input type="color" id="favcolor" value="#fcd7f9" class="">
+              <input type="color" id="favcolor" value="#840378" class="">
         </div>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Secondaire:</label><br>
@@ -130,7 +130,7 @@
         </div>
         <div class="col-sm-4">
               <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Tertiaire:</label><br>
-              <input type="color" id="favcolor" value="#840378" class="">
+              <input type="color" id="favcolor" value="#fcd7f9" class="">
         </div>
         <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Terminer</a>
   </div>

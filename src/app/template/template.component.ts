@@ -35,4 +35,5 @@ export class TemplateComponent implements OnInit{
             this.currentIndex = (this.currentIndex + 1) % this.carousel.images.length;
       }
 
+
 }
