@@ -56,8 +56,8 @@
             <div></div>
             <div></div>
         </div>
-        <p class="mb-0" *ngIf="selectedTheme[0]">{{selectedTheme[0]}}</p>
-        <button class="btn btn-outline-light float-end">modifiez</button>
+        <p class="mb-0" *ngIf="selectedTheme[0]" #theme>{{selectedTheme[0]}}</p>
+        <a  type="button" href="#input" class="btn btn-outline-light float-end" (click)="modifierTheme(0)">modifiez</a>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
 
@@ -79,10 +79,10 @@
                     </ul>
                 </div> -->
     </div>
-    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[0] && selectedTheme[1]">
+    <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedTheme[1]" #titre>
         <img src="../../assets/images/avatar2.png" alt="Avatar">
         <p class="mb-0">{{selectedTheme[1]}}</p>
-        <button class="btn btn-outline-light float-end">modifiez</button>
+        <a type="button" href="#input" class="btn btn-outline-light float-end" (click)="modifierTheme(1)">modifiez</a>
         <span class="time-right"></span>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="selectedTheme[1]">
@@ -126,9 +126,9 @@
         </div>
         <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Terminer</a>
   </div>
-    <form (ngSumit)="themer()" id="input" class="inputDiscussion">
+    <form (ngSumit)="themer()" class="inputDiscussion position-relative">
         <div><input type="text" placeholder="Entrer votre texte "
-                class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue"> <button
+                class="form-control form-control-lg disabled" [(ngModel)]="inputValue" name="inputValue" id="input"> <button
                 class="btn buttonChat fas fa-paper-plane" (click)="themer()"></button></div>
     </form>
 </div>
