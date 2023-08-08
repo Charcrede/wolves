@@ -16,6 +16,11 @@ img {
   vertical-align: middle;
 }
 
+body {
+  font-family: Verdana, sans-serif;
+}
+
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;

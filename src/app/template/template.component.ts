@@ -14,6 +14,7 @@ export class TemplateComponent implements OnInit{
       @Input() showColor!: boolean;
       color: boolean = false;
       patTemp:boolean =  false;
+      template!: string;
       constructor(
             private service: ServiceService,
       ) { }
@@ -25,5 +26,11 @@ export class TemplateComponent implements OnInit{
       carousels: Carousel[] = CAROUSELS;
       getCarousels(): Carousel[] {
             return CAROUSELS;
+      }
+      
+      selectedTemplate(id: string){
+            this.template = id;
+            console.log(this.template);
+            
         }
 }
