@@ -104,7 +104,7 @@
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template" id="template">
-        <app-template *ngFor="let carousel of carousels" [carousel]="carousel" [showColor]="color"></app-template>
+        <app-template [showColor]="color"></app-template>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="seeColor">
         <img src="../../assets/images/avatar2.png" alt="Avatar">
