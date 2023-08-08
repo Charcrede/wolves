@@ -1,15 +1,17 @@
 <header class="header" [@fadeInAnimation]>
     <nav [@fadeInAnimation]>
         <ul>
-            <li class="logo"><a href="../header/header.component.html">Create It</a></li>
+            <li class="logo"><a href="../header/header.component.html"><img src="../../assets/img-carousel/logo2 .png" alt="" width="30%"></a></li>
         </ul>
     </nav>
 
     <div class="contenue">
-        <h1 [@fadeInAnimation]><em>Génère ton site Vitrine en un click</em></h1>
-        <p class="texte2" [@fadeInAnimation]>{{newSentences}}</p>
-        <div class="button">
-            <a (click)="started(start)" href="#choice">Get Started</a>
+        <div class="mg-left">
+            <h1 [@fadeInAnimation]>Genere ton site Vitrine en un clique</h1>
+            <p class="texte2" [@fadeInAnimation]>{{newSentences}}</p>
+            <div class="button">
+                <a (click)="started(start)" href="#choice">Commencer</a>
+            </div>
         </div>
         <!-- <img src="../../assets/images/4912168.png" alt="" width="100%" height="50vh"> -->
     </div>
