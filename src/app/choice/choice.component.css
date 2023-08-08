@@ -198,6 +198,11 @@ ul {
   animation-delay: 0.4s;
 }
 
+.title2{
+  text-align: center;
+  color: #7112ca;
+}
+
 @keyframes loader-animation {
   from {
     transform: scale(1.5);
@@ -225,4 +230,8 @@ input[type=color] {
   height: 2rem;
   border: 0;
   border-radius: 0.2rem;
+}
+
+@media screen  {
+  
 }
