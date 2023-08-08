@@ -33,9 +33,9 @@
             </div>
             <div class="categorie" *ngIf="cate">
                 <ul>
-                    <li class="btn" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)"
+                    <li class="margin" role="button" *ngFor="let categorie of categories"><a (click)="onSelect(categorie)"
                             *ngIf="categorie.state">{{categorie.name}}</a></li>
-                    <button class="btn button1">...voir plus</button>
+                    <button class="btn button1" role="button">...voir plus</button>
                 </ul>
             </div>
             <span class="time-right">{{ times() }} : {{ minutes() }}</span>
@@ -103,7 +103,7 @@
         <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
-    <div *ngIf="template" id="template">
+    <div *ngIf="template" id="template" class="container2 b-shadow mt-2 ms-3 mb-3 ">
         <app-template *ngFor="let carousel of carousels" [carousel]="carousel" [showColor]="color"></app-template>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8" *ngIf="seeColor">
@@ -114,25 +114,27 @@
             <div></div>
         </div>
         <p class="mb-0" *ngIf="colored"> Voulez vous modifiez les couleurs du template ? </p>
-        <a type="button" href="#color" class="btn btn-outline-dark float-end" (click)="showColor()">Oui</a>
-        <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Ignorer</a>
+        <a type="button" href="#color" class="btn float-end colorB" (click)="showColor()">Oui</a>
+        <a type="button" href="#formulaire" class="btn float-end colorB" (click)="startForm(temp)">Ignorer</a>
         <span class="time-right"></span>
     </div>
-    <div class="row text-center pb-3" *ngIf="color">
-        <h3 class="title3">CHOIX DE COULEURS</h3>
-        <div class="col-sm-4">
-              <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Primaire :</label><br>
-              <input type="color" id="favcolor" value="#fcd7f9" class="">
+    <div class="container2 b-shadow" *ngIf="color">
+        <div class="row text-center pb-3">
+            <h3 class="title3">CHOIX DE COULEURS</h3>
+            <div class="col-sm-4">
+                  <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Primaire :</label><br>
+                  <input type="color" id="favcolor" value="#fcd7f9" class="">
+            </div>
+            <div class="col-sm-4">
+                  <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Secondaire:</label><br>
+                  <input type="color" id="favcolor" value="#c738ba" class="">
+            </div>
+            <div class="col-sm-4">
+                  <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Tertiaire:</label><br>
+                  <input type="color" id="favcolor" value="#840378" class="">
+            </div>
         </div>
-        <div class="col-sm-4">
-              <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Secondaire:</label><br>
-              <input type="color" id="favcolor" value="#c738ba" class="">
-        </div>
-        <div class="col-sm-4">
-              <label for="favcolor" class="mt-2 mb-2 fs-4 fw-3">Couleur Tertiaire:</label><br>
-              <input type="color" id="favcolor" value="#840378" class="">
-        </div>
-        <a type="button" href="#formulaire" class="btn btn-outline-dark float-end" (click)="startForm(temp)">Terminer</a>
+        <a href="#formulaire" class="btn float-end colorB" (click)="startForm(temp)">Terminer</a>
   </div>
     <form (ngSumit)="themer()" id="input" class="inputDiscussion">
         <div><input type="text" placeholder="Entrer votre texte "

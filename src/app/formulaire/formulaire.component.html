@@ -1,22 +1,22 @@
-<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light" #formulaire id="formulaire">
+<div class="col-sm-12 b-shadow" #formulaire id="formulaire">
       <h2 [@fadeInAnimation]>Finalisez et Recuperez votre site </h2>
       <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
       <form (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
-            <div class="form-floating mb-3 mt-3">
+            <div class="form-floating mb-3 mt-3 mx-3">
                   <input class="form-control form-control-lg" type="text" name="lastName" id="lastName" #lastName="ngModel" required [(ngModel)]="userModel.lastName">
                   <label for="nom">Nom</label>
                   <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
                         Votre Nom est réquise
                   </div>
             </div>
-            <div class="form-floating mt-3 mb-3">
+            <div class="form-floating mt-3 mb-3 mx-3">
                   <input class="form-control form-control-lg" type="text" name="firstName" id="firstName" #firstName="ngModel" required [(ngModel)]="userModel.firstName">
                   <label for="prenom">Prénom</label>
                   <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
                         Votre Prénom est réquise
                   </div>
             </div>
-            <div class="form-floating mt-3 mb-3">
+            <div class="form-floating mt-3 mb-3 mx-3">
                   <input class="form-control form-control-lg" type="mail" name="mail" id="mail" #mail="ngModel" required [(ngModel)]="userModel.mail">
                   <label for="email">Email</label>
                   <!-- <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
@@ -24,6 +24,6 @@
                   </div> -->
             </div>
 
-            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
+            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()" class="btn fw-bold send">Envoyer</button>
       </form>
 </div>
