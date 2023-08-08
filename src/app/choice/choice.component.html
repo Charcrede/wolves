@@ -10,7 +10,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue, sur notre site</p>
+            <p class="mb-0" *ngIf="bonj">Bonjour et bienvenue sur notre site.</p>
             <span class="time-right">{{ times() }} : {{ minutes() }} </span>
         </div>
         <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-8 mx-width" *ngIf="bonj">
@@ -100,7 +100,7 @@
             <div></div>
             <div></div>
         </div>
-        <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entrez le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes, appuyez sur entrer pour voir quelques exemples de templates</p>
+        <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entrez le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes, appuyez sur la touche <span style=" font-weight: bold;" > Entrer</span> pour voir quelques exemples de templates</p>
         <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template" id="template">
