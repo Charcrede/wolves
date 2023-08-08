@@ -240,3 +240,64 @@ input[type=color] {
 .inputDiscussion{
   margin-block:1rem ;
 }
+
+/********** Petit desktop *********/
+@media screen and (max-width: 1200px) {
+
+  .texte2 {
+      width: 100%;
+      font-size: 1.5rem;
+  }
+
+  .contenue p {
+      font-size: 1.2rem;
+  }
+}
+
+
+/********** Tablette *********/
+@media screen and (max-width: 980px) {
+
+  .block{
+      margin: 1rem;
+      margin-left: 1rem;
+  }
+
+  .contenue {
+      margin: 0;
+      margin-left: 0;
+  }
+
+  .texte2 {
+      text-align: center;
+  }
+
+  .contenue h1 {
+      font-size: 3rem;
+  }
+
+
+}
+
+/********** Mobile *********/
+@media screen and (max-width: 530px) {
+
+  .block{
+      margin: 1rem;
+  }
+
+  .contenue {
+      margin: 0;
+      margin-left: 0;
+  }
+  
+  .contenue h1 {
+      font-size: 2.5rem;
+  }
+
+  .texte2 {
+      text-align: center;
+      font-size: 1.2rem;
+  }
+
+}
