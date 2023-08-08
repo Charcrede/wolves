@@ -17,7 +17,6 @@ export class FormulaireComponent implements OnInit, OnChanges {
       FirstName!:string | null;
       LastName!: string | null;
       Email!: string | null;
-      
 
       ngOnInit():void {
             if(localStorage){
@@ -93,6 +92,5 @@ export class FormulaireComponent implements OnInit, OnChanges {
           console.log(container);
           
         }
-      
 }
 
