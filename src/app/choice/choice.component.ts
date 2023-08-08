@@ -94,7 +94,6 @@ export class ChoiceComponent implements OnInit {
             }, 1000);
             setTimeout(() => {
                   this.cate = true;
-                  this.retard(this.categories)
             }, 2000);
             setTimeout(() => {
                   this.cate2 = true;
