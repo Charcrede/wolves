@@ -2,8 +2,10 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Verdana, sans-serif;
+.cont{
+  display: flex;
+  flex-direction: row;
+  /* flex-wrap: wrap; */
 }
 
 .mySlides {
@@ -13,6 +15,11 @@ body {
 img {
   vertical-align: middle;
 }
+
+body {
+  font-family: Verdana, sans-serif;
+}
+
 
 /* Slideshow container */
 .slideshow-container {
@@ -115,7 +122,6 @@ img {
 
 div.carousel-item img {
   width: 300px;
-  height: 400px;
 }
 
 

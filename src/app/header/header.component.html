@@ -1,17 +1,19 @@
 <header class="header" [@fadeInAnimation]>
-    <nav [@fadeInAnimation]>
+    <nav [@fadeInAnimation] class="container-fluid">
         <ul>
-            <li class="logo"><a href="../header/header.component.html"><img src="../../assets/img-carousel/logo2 .png" alt="" width="30%"></a></li>
+            <div class="logo">
+                <li><a href="../header/header.component.html"><img src="../../assets/img-carousel/logo2 .png"></a></li>
+            </div>
         </ul>
     </nav>
 
     <div class="contenue">
-        <div class="mg-left">
+        <div class="block">
             <h1 [@fadeInAnimation]>Genere ton site Vitrine en un clique</h1>
             <p class="texte2" [@fadeInAnimation]>{{newSentences}}</p>
-            <div class="button">
-                <a (click)="started(start)" href="#choice">Commencer</a>
-            </div>
+        </div>
+        <div class="button">
+            <a (click)="started(start)" href="#choice">Commencer</a>
         </div>
         <!-- <img src="../../assets/images/4912168.png" alt="" width="100%" height="50vh"> -->
     </div>
