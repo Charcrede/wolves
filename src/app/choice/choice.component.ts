@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CAROUSELS } from '../mock';
 import { Carousel } from '../models';
 import { count } from 'rxjs';
+import { DatePipe } from '@angular/common';
 // if (choice) {
 //       choice.scrollTo(10000,0);
 
@@ -69,8 +70,8 @@ export class ChoiceComponent implements OnInit {
             // this.categories.forEach(el => {
                   //       el.state = false;
                   // })
-                  this.selectedCategorie.state = true;
-                  this.selectedCategorie.choose = true;
+            this.selectedCategorie.state = true;
+            this.selectedCategorie.choose = true;
             this.categorieThemes = this.service.getCatTheme(this.selectedCategorie.id);
             this.retard(this.categorieThemes.themes);
             setTimeout(() => {
