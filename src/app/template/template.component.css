@@ -16,6 +16,11 @@ img {
   vertical-align: middle;
 }
 
+body {
+  font-family: Verdana, sans-serif;
+}
+
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -211,6 +216,6 @@ div.carousel-item img {
 }
 
 .carousel:hover>div {
-  transform: scale(1.2);
+  transform: scale(1.05);
   border-radius: 0.2rem;
 }

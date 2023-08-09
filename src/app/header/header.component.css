@@ -8,19 +8,19 @@
     max-width: 100%;
     padding-top: 0.5rem;
     color: white;
-}
-.logo {
-    font-size: 3rem;
+    /* padding-top: 0.5rem; */
+    color: white;
 }
 
 .header ul {
     display: flex;
     align-items: center;
     list-style: none;
-    justify-content: space-between;
+    justify-content: start;
     color: #fff;
     margin-block: 0px;
     padding-block: 0.5rem;
+    margin-left: 0;
     padding-inline: 1rem;
     gap: 1rem;
 
@@ -28,30 +28,26 @@
 }
 
 .contenue {
-    margin-left: 10%;
+    padding-left: 5rem;
     margin: 1rem;
-    margin-top: 5rem;
-}
-
-.menu1 li a {
-    padding: .5rem;
-}
-
-.menu1 li a:hover {
-    background-color: #ffffff;
-    color: #010028;
+    margin-top: 3rem;
+    background-image: url("../../assets/images/bg-flow.png");
 }
 
 .contenue h1 {
     margin-bottom: 3rem;
+    margin-top: 8rem;
     font-weight: bold;
     font-size: 4rem;
     font-family: Tanker;
+    word-spacing: .15rem;
+    letter-spacing: .15rem;
     width: 50%;
     padding-left: 1.5rem;
     text-transform: uppercase;
 }
-.mg-left{
+
+.block{
     margin-left: 5rem;
 }
 .header h2,
@@ -60,9 +56,8 @@
     font-size: 1rem;
 }
 
-.texte1 {
-    width: 30rem;
-    margin: 1rem;
+p {
+    padding-left: 1.5rem;
 }
 
 .texte2 {
@@ -81,16 +76,29 @@
     font-weight: bold;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo a {
     text-decoration: none;
     color: #8f14c0;
+    font-family: "Audiowide", sans-serif;
+    font-size: 3rem;
+}
+
+.logo img {
+    width: 30%;
 }
 
 .button {
-    position: absolute;
-    bottom: 5%;
-    margin: 3rem;
-    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding-block: 3rem;
 }
 
 .button a {
@@ -105,11 +113,86 @@
 }
 
 
-.button a:hover{
-    background-color: #010028;
+.button a:hover {
+    background-color: #200554;
     color: #fff;
     box-shadow: 0 4px 8px 0 #00000042;
     transform: scale(1.1);
     opacity: 0.8;
+}
+
+
+
+/********** Petit desktop *********/
+@media screen and (max-width: 1200px) {
+
+    .texte2 {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .contenue h1 {
+        font-size: 3rem;
+        text-align: center;
+        width: 100%;
+        text-transform: uppercase;
+    }
+}
+
+
+/********** Tablette *********/
+@media screen and (max-width: 980px) {
+
+    .block{
+        margin: 1rem;
+        margin-left: 1rem;
+    }
+
+    .contenue {
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .texte2 {
+        text-align: center;
+    }
+
+    .contenue h1 {
+        font-size: 3rem;
+    }
+
+
+}
+
+/********** Mobile *********/
+@media screen and (max-width: 530px) {
+
+    .block{
+        margin: 1rem;
+    }
+
+    .contenue {
+        margin: 0;
+        padding-left: 0;
+    }
+    
+    .contenue h1 {
+        font-size: 2.5rem;
+        margin-top: 3rem;
+    }
+
+    .texte2 {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .header ul {
+        text-align: center;
+    }
+    
+    .header ul img{
+        width: 50%;
+    }
+
 }
 

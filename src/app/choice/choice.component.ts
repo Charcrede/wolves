@@ -38,6 +38,9 @@ export class ChoiceComponent implements OnInit {
       }
       @Output() form : EventEmitter<boolean> = new EventEmitter();
       @Output() templ : EventEmitter<boolean> = new EventEmitter();
+      @Output() category : EventEmitter<string> = new EventEmitter();
+      @Output() theme : EventEmitter<string> = new EventEmitter();
+      @Output() titre : EventEmitter<string> = new EventEmitter();
       index: number = 0;
       colored: boolean =false;
       seeColor: boolean = false;
@@ -59,6 +62,8 @@ export class ChoiceComponent implements OnInit {
       inputValue: string = "";
       time: any = "";
       minute:any ="";
+      able: boolean = true;
+      paddleOfColor: string[] = [];
 
     heure: any = this.time + this.minute
 
@@ -75,6 +80,7 @@ export class ChoiceComponent implements OnInit {
                   this.seeTheme = true;
                   // this.retard(this.categories)
             }, 1000);
+            this.able = false;
       }
       retard(array: SousThemes[] | Categorie[]) {
             let i = 0
@@ -91,23 +97,38 @@ export class ChoiceComponent implements OnInit {
             }, 1000);
             setTimeout(() => {
                   this.cate = true;
-                  this.retard(this.categories)
             }, 2000);
             setTimeout(() => {
                   this.cate2 = true;
                   this.retard(this.categories)
             }, 3000);
       }
-      startForm(bool : boolean){
+      startForm(bool : boolean,){
             this.templ.emit(bool);
+            this.colorPaddle();
+
+      }
+      @ViewChild ('input1') primary!: ElementRef;
+      @ViewChild ('input2') secondary!: ElementRef;
+      @ViewChild ('input3') tertiary!: ElementRef;
+      colorPaddle(){
+        let input1 = this.primary.nativeElement;                
+        let input2 = this.secondary.nativeElement;            
+        let input3 = this.tertiary.nativeElement;
+        this.paddleOfColor.push(input1.value)                
+        this.paddleOfColor.push(input2.value)                
+        this.paddleOfColor.push(input3.value)  
+        console.log(this.paddleOfColor);
+        return this.paddleOfColor;
+                      
       }
       themer(){
-            this.selectedTheme.push(this.inputValue);
+            this.selectedTheme[this.confirm] = this.inputValue;
             this.confirm++;
-            if (this.confirm >= 3 && this.fiText) {
+            if (this.fiText) {
                   this.template = true;
             }
-        if (this.confirm === 2) {
+        if (this.selectedTheme[0] && this.selectedTheme[1]) {
             setTimeout(() => {
                 this.fiText = true;
             }, 1000);
@@ -129,10 +150,7 @@ export class ChoiceComponent implements OnInit {
 
     }
     botText: string = "Bonjour chers clients"
-    carousels: Carousel[] = CAROUSELS;
-    getCarousels(): Carousel[] {
-        return CAROUSELS;
-    }
+    
     times() {
         let time = new Date()
         let hours = 0;
@@ -151,6 +169,17 @@ export class ChoiceComponent implements OnInit {
     }
     showColor() {
         this.color = true;
+        
+        
     }
-
+    modifierTheme(u: number){
+        this.inputValue = this.selectedTheme[u];
+        this.confirm = u;
+        this.fiText = false;
+    }
+    choices(){
+        this.category.emit(this.selectedCategorie.name)
+        this.theme.emit(this.selectedTheme[0])
+        this.titre.emit(this.selectedTheme[1])
+    }
 }
