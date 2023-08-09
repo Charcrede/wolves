@@ -18,52 +18,48 @@
     list-style: none;
     justify-content: start;
     color: #fff;
-    margin-block: 0px;
-    padding-block: 0.5rem;
     margin-left: 0;
     padding-inline: 1rem;
     gap: 1rem;
-
     list-style: none;
 }
 
 .contenue {
-    margin-left: 10%;
+    padding-left: 1.5rem;
     margin: 1rem;
-    margin-top: 5rem;
+    margin-top: 4rem;
+    width: 60%;
     background-image: url("../../assets/images/bg-flow.png");
-}
-
-.menu1 li a {
-    padding: .5rem;
-}
-
-.menu1 li a:hover {
-    background-color: #ffffff;
-    color: #010028;
 }
 
 .contenue h1 {
     margin-bottom: 3rem;
-    margin-top: 8rem;
-    font-weight: bold;
-    font-size: 4rem;
-    font-family: Tanker;
-    width: 50%;
+    margin-top: 4rem;
     padding-left: 1.5rem;
+    width: 50%;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: Tanker;
+    word-spacing: .15rem;
+    letter-spacing: .15rem;
     text-transform: uppercase;
 }
-.mg-left{
+
+.block{
     margin-left: 5rem;
 }
+
 .header h2,
 .header h2 p {
     font-weight: lighter;
     font-size: 1rem;
 }
 
+p {
+    padding-left: 1.5rem;
+}
+
 .texte2 {
-    width: 60%;
     font-size: 1.7rem;
     color: #bd7cd7;
     font-family: Poppins;
@@ -92,7 +88,10 @@
 }
 
 .logo img {
-    width: 30%;
+    width: 20%;
+    
+    /* mix-blend-mode: ; */
+
 }
 
 .button {
@@ -101,17 +100,23 @@
     align-items: center;
     font-size: 1.2rem;
     padding-block: 3rem;
+    position: absolute;
+    left: 20%;
+    bottom: 1%;
+    margin: 0 auto;
 }
 
 .button a {
-    background-image: linear-gradient(to right, #53048c, #04589d);
-    color: #c0afda;
-    font-size: 1.5em;
+    background-image: linear-gradient( to right, #53048c  50%, #04589d);
+    color: #cfc2e2;
+    font-size: 1em;
+    font-weight: 600;
     /* border: 0.1rem solid white; */
     padding: 0.5rem 1.5rem;
     border-radius: 2rem;
-    transition: all 2s;
+    transition: all 1s;
     text-decoration: none;
+    text-align: center;
 }
 
 
@@ -119,31 +124,38 @@
     background-color: #200554;
     color: #fff;
     box-shadow: 0 4px 8px 0 #00000042;
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 0.8;
 }
 
 
 
 /********** Petit desktop *********/
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) and (min-width: 981px){
 
     .texte2 {
         width: 100%;
+        font-size: 1rem;
+    }
+    .contenue{
+        width: 60%;
+    }
+    .contenue h1 {
         font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        text-align: center;
+        width: 60%;
+        text-transform: uppercase;
     }
 
-    .contenue h1 {
-        font-size: 3rem;
-        text-align: center;
-        width: 100%;
-        text-transform: uppercase;
+    .button a{
+        font-size: 1rem;
     }
 }
 
 
 /********** Tablette *********/
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 980px) and (min-width: 531px) {
 
     .block{
         margin: 1rem;
@@ -152,7 +164,8 @@
 
     .contenue {
         margin: 0;
-        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
     }
 
     .texte2 {
@@ -175,16 +188,28 @@
 
     .contenue {
         margin: 0;
-        margin-left: 0;
+        padding-left: 0;
+        width: 100%;
     }
     
     .contenue h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
     }
 
     .texte2 {
         text-align: center;
         font-size: 1.2rem;
+        line-height: 2.2;
+    }
+
+    .header ul {
+        text-align: center;
+    }
+    
+    .header ul img{
+        margin-block: 2rem;
+        width: 50%;
     }
 
 }

@@ -62,6 +62,7 @@ export class ChoiceComponent implements OnInit {
       inputValue: string = "";
       time: any = "";
       minute:any ="";
+      able: boolean = true;
       paddleOfColor: string[] = [];
 
     heure: any = this.time + this.minute
@@ -79,6 +80,7 @@ export class ChoiceComponent implements OnInit {
                   this.seeTheme = true;
                   // this.retard(this.categories)
             }, 1000);
+            this.able = false;
       }
       retard(array: SousThemes[] | Categorie[]) {
             let i = 0
@@ -95,7 +97,6 @@ export class ChoiceComponent implements OnInit {
             }, 1000);
             setTimeout(() => {
                   this.cate = true;
-                  this.retard(this.categories)
             }, 2000);
             setTimeout(() => {
                   this.cate2 = true;
@@ -149,10 +150,7 @@ export class ChoiceComponent implements OnInit {
 
     }
     botText: string = "Bonjour chers clients"
-    carousels: Carousel[] = CAROUSELS;
-    getCarousels(): Carousel[] {
-        return CAROUSELS;
-    }
+    
     times() {
         let time = new Date()
         let hours = 0;

@@ -1,29 +1,30 @@
-<div class="col-sm-12 text-center mt-3 mb-5 p-5 rounded bg-light" #formulaire id="formulaire">
+<div class="col-sm-12 b-shadow " #formulaire id="formulaire">
+<div class="col-sm-12 b-shadow container-fluid" #formulaire id="formulaire">
       <h2 [@fadeInAnimation]>Finalisez et Récupérez votre site </h2>
       <p [@fadeInAnimation]>Votre site n'attend que vous ! </p>
       <form (ngSubmit)="onSubmit()" #userInfoForm="ngForm">
             <div class="form-floating mb-3 mt-3">
-                  <input class="form-control form-control-lg" type="text" name="lastName" id="lastName" #lastName="ngModel" required [(ngModel)]="userModel.lastName">
+                  <input class="form-control form-control-lg" type="text" name="nom" id="lastName" required [(ngModel)]="nom">
                   <label for="nom">Nom</label>
-                  <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
-                        Votre Nom est réquis
-                  </div>
+                  <!-- <div [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+                        Votre Nom est réquit
+                  </div> -->
             </div>
             <div class="form-floating mt-3 mb-3">
-                  <input class="form-control form-control-lg" type="text" name="firstName" id="firstName" #firstName="ngModel" required [(ngModel)]="userModel.firstName">
+                  <input class="form-control form-control-lg" type="text" name="prenom" id="firstName" required [(ngModel)]="prenom">
                   <label for="prenom">Prénom</label>
-                  <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
-                        Votre Prénom est réquis
-                  </div>
+                  <!-- <div [hidden]="prenom.valid || prenom.pristine" class="alert alert-danger">
+                        Votre Prénom est réquit
+                  </div> -->
             </div>
             <div class="form-floating mt-3 mb-3">
-                  <input class="form-control form-control-lg" type="mail" name="mail" id="mail" #mail="ngModel" required [(ngModel)]="userModel.mail">
+                  <input class="form-control form-control-lg" type="mail" name="email" id="mail" required [(ngModel)]="email">
                   <label for="email">Email</label>
                   <!-- <div [hidden]="mail.valid || mail.pristine" class="alert alert-danger">
                         Votre Email est réquise
                   </div> -->
             </div>
 
-            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()" class="btn btn-primary w-100 fw-bold py-3 ">Envoyer</button>
+            <button type="submit" [disabled]="!userInfoForm.form.valid" (click)="newUser(); userInfoForm.reset()" class="btn fw-bold send">Envoyer</button>
       </form>
 </div>

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild,OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { fadeInAnimation } from '../animation.module'
 import { userInfos } from '../user.Info';
@@ -8,11 +8,19 @@ import { userInfos } from '../user.Info';
       styleUrls: ['./formulaire.component.css'],
       animations: [fadeInAnimation]
 })
-export class FormulaireComponent implements OnInit, OnChanges {
+export class FormulaireComponent implements OnInit {
+      
+      @Output() userInfo: EventEmitter<userInfos> = new EventEmitter();
 
-      userModel = new userInfos('King', 'TCHALLA','king@wakanda');
 
-      submitted = false;
+//      userModel = new userInfos('King', 'TCHALLA','king@wakanda');      
+     prenom = "";
+     nom = "";
+     email = "";
+     newUserInfo!: userInfos;
+     localInfo: string | null = null;
+     submitted = false;
+
 
       FirstName!:string | null;
       LastName!: string | null;
@@ -32,17 +40,17 @@ export class FormulaireComponent implements OnInit, OnChanges {
       }
 
       newUser(){
-            this.userModel = new userInfos(`${this.userModel.firstName}`, `${this.userModel.lastName}`, `${this.userModel.mail}`);
-            
-            localStorage.setItem('prenon', this.userModel.firstName);
-            this.FirstName = localStorage.getItem('prenon');
-            localStorage.setItem('nom', this.userModel.lastName);
-            this.LastName = localStorage.getItem('nom');
-            localStorage.setItem('email', this.userModel.mail);
-            this.Email = localStorage.getItem('email');
-                      
+            this.newUserInfo = new userInfos(this.prenom, this.nom, this.email);
+            this.userInfo.emit(this.newUserInfo);
+            console.log(this.newUserInfo);
+      }
 
-            console.log(this.userModel);
+      getUserInfo(): string | null {
+            return localStorage.getItem(JSON.stringify(this.newUserInfo)) 
+      }
+
+      loadUserInfo(): string |null {
+            return this.localInfo = this.getUserInfo()
       }
 
       ngOnChanges():void{
@@ -61,36 +69,5 @@ export class FormulaireComponent implements OnInit, OnChanges {
 
 
 
-      // name!: string;
-      // surname!: string;
-      // email!: string;
-      // myForm: FormGroup;
-
-      // constructor(
-      //       private formBuilder: FormBuilder
-      // ) {
-      //       this.myForm = this.formBuilder.group({
-      //             name: ['', Validators.required],
-      //             surname: ['', Validators.required],
-      //             email: ['', [Validators.required, Validators.email]]
-      //       });
-
-      // };
-      // onSubmit() {
-      //       if (this.myForm.valid) {
-      //             console.log(this.myForm.value);
-      //             // Effectuez des actions, telles que l'envoi des données au serveur.
-      //       }
-      // }
-      @ViewChild ('formulaire') formulaire !: ElementRef;
-      ngAfterViewInit():void{
-          this.scrollToBottom();
-        }
-        scrollToBottom(){
-          const container = this.formulaire.nativeElement;
-          container.scrollTop = container.scrollHeight;
-          console.log(container);
-          
-        }
 }
 
