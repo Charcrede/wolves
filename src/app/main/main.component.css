@@ -1,12 +1,22 @@
 .contain{
     /* max-width: 1300px; */
     margin: 0 auto;
-    width: 90%;
-}
-.chat{
-    margin: 2rem;
-    /* padding: 1rem; */
+    width: 100%;
+    background-color: white;
+    background-image: url(/assets/logo/monfond.png);
+    background-repeat: no-repeat;
+    /* margin: 2rem; */
+    background-size: cover;
     border-radius: 1rem;
+}
+
+
+
+.container2{
+    max-width: 100%;
+}
+.bg-blur{
+    backdrop-filter: blur(10px);
 }
 
 .b-shadow{
@@ -23,7 +33,7 @@
     .contain{
         /* max-width: 1300px; */
         margin: 0 auto;
-        width: 95%;
+        width: 90%;
     }
   }
   
@@ -35,6 +45,7 @@
         /* max-width: 1300px; */
         margin: 0 auto;
         width: 100%;
+        background-color: white;
     }
     
   

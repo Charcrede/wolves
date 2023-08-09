@@ -36,7 +36,6 @@
                     <button class="btn button1">Plus...</button>
                 </ul>
             </div>
-            <span class="time-right">{{ times() }} : {{ minutes() }}</span>
         </div>
     </div>
     <div class="container b-shadow mt-2 ms-3 mb-3 col-sm-6 usersEnter" *ngIf="selectedCategorie">
@@ -96,7 +95,6 @@
             <div></div>
         </div>
         <p *ngIf="fiText" id="resume">Vous avez choisi la catégorie {{selectedCategorie.name}}, entré le theme {{selectedTheme[0]}}, et le nom {{selectedTheme[1]}}, si ces informations sont correctes appuyez entrer pour voir quelques exemples de templates</p>
-        <span class="time-right">{{ times() }} : {{ minutes() }}</span>
     </div>
     <div *ngIf="template" id="template" class="container2 b-shadow mt-2 ms-3 mb-3 ">
         <app-template [showColor]="color"></app-template>
