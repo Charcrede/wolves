@@ -1,6 +1,8 @@
-<div class="contain" [ngClass]="{'taille' : getStarted}" *ngIf="getStarted">
-    <div class="chat b-shadow">
-        <app-choice (templ)="showform($event)"></app-choice>
-    </div>
-    <app-formulaire *ngIf="formulaire"></app-formulaire>    
+<div class="" [ngClass]="{'taille' : getStarted}" *ngIf="getStarted">
+    <div class="">
+        <div class="chat b-shadow contain">
+            <app-choice (templ)="showform($event)"></app-choice>
+        </div>
+        <app-formulaire *ngIf="formulaire" class="contain"></app-formulaire>
+    </div>   
 </div>
